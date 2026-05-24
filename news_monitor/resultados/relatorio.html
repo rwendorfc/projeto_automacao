@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitoramento de Notícias — 24/05/2026 19:24 UTC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f0f4f8; color: #1a202c; }
+    header {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+      color: white; padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    header h1 { font-size: 1.8rem; font-weight: 700; }
+    header p { opacity: 0.8; margin-top: 0.3rem; font-size: 0.95rem; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+
+    .resumo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .card-resumo {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-left: 5px solid #ccc;
+    }
+    .card-resumo.positivo { border-left-color: #38a169; }
+    .card-resumo.negativo { border-left-color: #e53e3e; }
+    .card-resumo.neutro  { border-left-color: #718096; }
+    .card-resumo.misto   { border-left-color: #d69e2e; }
+
+    .card-resumo h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .card-resumo .cargo { font-size: 0.8rem; color: #718096; margin-bottom: 1rem; }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    .badge.Positivo { background: #c6f6d5; color: #276749; }
+    .badge.Negativo { background: #fed7d7; color: #9b2c2c; }
+    .badge.Neutro   { background: #e2e8f0; color: #4a5568; }
+    .badge.Misto    { background: #fefcbf; color: #744210; }
+
+    .score-bar-wrap { margin: 0.5rem 0; }
+    .score-label { font-size: 0.75rem; color: #718096; margin-bottom: 2px; }
+    .score-bar { height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+    .score-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+    .score-fill.pos { background: #38a169; }
+    .score-fill.neg { background: #e53e3e; }
+    .score-fill.neu { background: #a0aec0; }
+
+    .stats { display: flex; gap: 1rem; flex-wrap: wrap; margin: 0.8rem 0; }
+    .stat { text-align: center; }
+    .stat .num { font-size: 1.3rem; font-weight: 700; }
+    .stat .lbl { font-size: 0.7rem; color: #718096; text-transform: uppercase; }
+
+    .temas { margin-top: 0.8rem; }
+    .tema-tag {
+      display: inline-block;
+      background: #ebf4ff;
+      color: #2b6cb0;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.72rem;
+      margin: 2px;
+    }
+
+    .secao-pessoa { margin-bottom: 3rem; }
+    .secao-pessoa h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      color: #2d3748;
+    }
+    .noticias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1rem;
+    }
+    .card-noticia {
+      background: white;
+      border-radius: 10px;
+      padding: 1.2rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      border-top: 3px solid #e2e8f0;
+    }
+    .card-noticia.Positivo { border-top-color: #38a169; }
+    .card-noticia.Negativo { border-top-color: #e53e3e; }
+    .card-noticia.Neutro   { border-top-color: #a0aec0; }
+    .card-noticia.Misto    { border-top-color: #d69e2e; }
+
+    .noticia-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.6rem; }
+    .noticia-titulo { font-size: 0.9rem; font-weight: 600; line-height: 1.4; flex: 1; }
+    .noticia-titulo a { color: #2b6cb0; text-decoration: none; }
+    .noticia-titulo a:hover { text-decoration: underline; }
+    .noticia-meta { font-size: 0.72rem; color: #a0aec0; margin-bottom: 0.5rem; }
+    .noticia-resumo { font-size: 0.82rem; color: #4a5568; line-height: 1.5; margin-bottom: 0.6rem; }
+    .noticia-justificativa { font-size: 0.78rem; color: #718096; font-style: italic; border-left: 3px solid #e2e8f0; padding-left: 0.5rem; }
+    .relevancia { font-size: 0.7rem; color: #718096; margin-top: 0.5rem; }
+
+    footer { text-align: center; color: #a0aec0; font-size: 0.78rem; padding: 2rem; }
+
+    @media (max-width: 600px) {
+      .noticias-grid { grid-template-columns: 1fr; }
+      .resumo-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Monitoramento de Notícias</h1>
+  <p>Análise de sentimento — Gerado em 24/05/2026 19:24 UTC | Período: últimos 7 dias</p>
+</header>
+<div class="container">
+  <h2 style="margin-bottom:1rem;color:#2d3748;">Resumo Executivo</h2>
+  <div class="resumo-grid">
+    
+    <div class="card-resumo positivo">
+      <h2>Gracinha Caiado</h2>
+      <div class="cargo">Primeira-dama de Goiás</div>
+      <span class="badge Positivo">Positivo</span>
+      
+    <div class="score-bar-wrap">
+      <div class="score-label">Score: +0.73</div>
+      <div class="score-bar"><div class="score-fill pos" style="width:86%"></div></div>
+    </div>
+      <div class="stats">
+        <div class="stat"><div class="num">3</div><div class="lbl">Notícias</div></div>
+        <div class="stat"><div class="num" style="color:#38a169">3</div><div class="lbl">Positivas</div></div>
+        <div class="stat"><div class="num" style="color:#e53e3e">0</div><div class="lbl">Negativas</div></div>
+        <div class="stat"><div class="num" style="color:#718096">0</div><div class="lbl">Neutras</div></div>
+      </div>
+      <div class="temas"><span class="tema-tag">Social</span><span class="tema-tag">Mulheres</span><span class="tema-tag">Capacitação</span><span class="tema-tag">Inclusão</span><span class="tema-tag">Assistência Social</span></div>
+    </div>
+    <div class="card-resumo positivo">
+      <h2>Ronaldo Caiado</h2>
+      <div class="cargo">Governador de Goiás</div>
+      <span class="badge Positivo">Positivo</span>
+      
+    <div class="score-bar-wrap">
+      <div class="score-label">Score: +0.30</div>
+      <div class="score-bar"><div class="score-fill pos" style="width:65%"></div></div>
+    </div>
+      <div class="stats">
+        <div class="stat"><div class="num">5</div><div class="lbl">Notícias</div></div>
+        <div class="stat"><div class="num" style="color:#38a169">3</div><div class="lbl">Positivas</div></div>
+        <div class="stat"><div class="num" style="color:#e53e3e">1</div><div class="lbl">Negativas</div></div>
+        <div class="stat"><div class="num" style="color:#718096">0</div><div class="lbl">Neutras</div></div>
+      </div>
+      <div class="temas"><span class="tema-tag">Infraestrutura</span><span class="tema-tag">Investimentos</span><span class="tema-tag">Governo Estadual</span><span class="tema-tag">Reforma Tributária</span><span class="tema-tag">Agronegócio</span></div>
+    </div>
+    <div class="card-resumo positivo">
+      <h2>Adryanna Caiado</h2>
+      <div class="cargo">Família Caiado</div>
+      <span class="badge Positivo">Positivo</span>
+      
+    <div class="score-bar-wrap">
+      <div class="score-label">Score: +0.66</div>
+      <div class="score-bar"><div class="score-fill pos" style="width:83%"></div></div>
+    </div>
+      <div class="stats">
+        <div class="stat"><div class="num">2</div><div class="lbl">Notícias</div></div>
+        <div class="stat"><div class="num" style="color:#38a169">2</div><div class="lbl">Positivas</div></div>
+        <div class="stat"><div class="num" style="color:#e53e3e">0</div><div class="lbl">Negativas</div></div>
+        <div class="stat"><div class="num" style="color:#718096">0</div><div class="lbl">Neutras</div></div>
+      </div>
+      <div class="temas"><span class="tema-tag">Meio Ambiente</span><span class="tema-tag">Cerrado</span><span class="tema-tag">Reflorestamento</span><span class="tema-tag">Saúde Mental</span><span class="tema-tag">Juventude</span></div>
+    </div>
+    <div class="card-resumo positivo">
+      <h2>Roberta Wendorf Carvalho</h2>
+      <div class="cargo">Personalidade pública</div>
+      <span class="badge Positivo">Positivo</span>
+      
+    <div class="score-bar-wrap">
+      <div class="score-label">Score: +0.61</div>
+      <div class="score-bar"><div class="score-fill pos" style="width:80%"></div></div>
+    </div>
+      <div class="stats">
+        <div class="stat"><div class="num">2</div><div class="lbl">Notícias</div></div>
+        <div class="stat"><div class="num" style="color:#38a169">2</div><div class="lbl">Positivas</div></div>
+        <div class="stat"><div class="num" style="color:#e53e3e">0</div><div class="lbl">Negativas</div></div>
+        <div class="stat"><div class="num" style="color:#718096">0</div><div class="lbl">Neutras</div></div>
+      </div>
+      <div class="temas"><span class="tema-tag">Cultura</span><span class="tema-tag">Representação Institucional</span><span class="tema-tag">Goiás</span><span class="tema-tag">Festivais</span><span class="tema-tag">Editais</span></div>
+    </div>
+    <div class="card-resumo neutro">
+      <h2>Decio Wendorf</h2>
+      <div class="cargo">Personalidade pública</div>
+      <span class="badge Neutro">Neutro</span>
+      
+    <div class="score-bar-wrap">
+      <div class="score-label">Score: +0.05</div>
+      <div class="score-bar"><div class="score-fill neu" style="width:52%"></div></div>
+    </div>
+      <div class="stats">
+        <div class="stat"><div class="num">1</div><div class="lbl">Notícias</div></div>
+        <div class="stat"><div class="num" style="color:#38a169">0</div><div class="lbl">Positivas</div></div>
+        <div class="stat"><div class="num" style="color:#e53e3e">0</div><div class="lbl">Negativas</div></div>
+        <div class="stat"><div class="num" style="color:#718096">1</div><div class="lbl">Neutras</div></div>
+      </div>
+      <div class="temas"><span class="tema-tag">Economia</span><span class="tema-tag">Empresarial</span><span class="tema-tag">Goiânia</span></div>
+    </div>
+    <div class="card-resumo misto">
+      <h2>Daniel Vilela</h2>
+      <div class="cargo">Político de Goiás</div>
+      <span class="badge Misto">Misto</span>
+      
+    <div class="score-bar-wrap">
+      <div class="score-label">Score: +0.17</div>
+      <div class="score-bar"><div class="score-fill pos" style="width:58%"></div></div>
+    </div>
+      <div class="stats">
+        <div class="stat"><div class="num">4</div><div class="lbl">Notícias</div></div>
+        <div class="stat"><div class="num" style="color:#38a169">2</div><div class="lbl">Positivas</div></div>
+        <div class="stat"><div class="num" style="color:#e53e3e">1</div><div class="lbl">Negativas</div></div>
+        <div class="stat"><div class="num" style="color:#718096">0</div><div class="lbl">Neutras</div></div>
+      </div>
+      <div class="temas"><span class="tema-tag">MDB</span><span class="tema-tag">Eleições 2026</span><span class="tema-tag">Articulação Política</span><span class="tema-tag">Candidatura</span><span class="tema-tag">Segurança Pública</span></div>
+    </div>
+    <div class="card-resumo positivo">
+      <h2>Iara Netto Vilela</h2>
+      <div class="cargo">Personalidade pública</div>
+      <span class="badge Positivo">Positivo</span>
+      
+    <div class="score-bar-wrap">
+      <div class="score-label">Score: +0.84</div>
+      <div class="score-bar"><div class="score-fill pos" style="width:92%"></div></div>
+    </div>
+      <div class="stats">
+        <div class="stat"><div class="num">2</div><div class="lbl">Notícias</div></div>
+        <div class="stat"><div class="num" style="color:#38a169">2</div><div class="lbl">Positivas</div></div>
+        <div class="stat"><div class="num" style="color:#e53e3e">0</div><div class="lbl">Negativas</div></div>
+        <div class="stat"><div class="num" style="color:#718096">0</div><div class="lbl">Neutras</div></div>
+      </div>
+      <div class="temas"><span class="tema-tag">Educação</span><span class="tema-tag">Alfabetização</span><span class="tema-tag">Zona Rural</span><span class="tema-tag">Inclusão Social</span><span class="tema-tag">Direitos Humanos</span></div>
+    </div>
+  </div>
+
+  <h2 style="margin-bottom:1.5rem;color:#2d3748;">Notícias por Pessoa</h2>
+  
+            <div class="secao-pessoa">
+              <h2>Gracinha Caiado <small style="font-size:0.7em;color:#718096;font-weight:400">(Primeira-dama de Goiás)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/gracinha-mulheres" target="_blank" rel="noopener">Gracinha Caiado lança programa de capacitação profissional para mulheres em Goiás</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">Globo Goiás · 24/05/2026 19:24</div>
+      <div class="noticia-resumo">A primeira-dama Gracinha Caiado lançou o programa 'Goiás Mulher' voltado à qualificação profissional de 10 mil mulheres vulneráveis.</div>
+      <div class="noticia-justificativa">Programa social voltado à inclusão feminina e geração de emprego tem conotação muito positiva.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Social</span><span class="tema-tag">Mulheres</span><span class="tema-tag">Capacitação</span><span class="tema-tag">Inclusão</span></div>
+      <div class="relevancia">Score: +0.85</div>
+    </div>
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/gracinha-visita" target="_blank" rel="noopener">Primeira-dama visita entidades sociais no interior goiano</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">O Popular · 22/05/2026 19:24</div>
+      <div class="noticia-resumo">Gracinha Caiado percorreu municípios do interior em ação de doação de cestas básicas e acompanhamento de projetos sociais.</div>
+      <div class="noticia-justificativa">Ação humanitária com entrega direta de benefícios à população carente é notícia positiva.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Assistência Social</span><span class="tema-tag">Interior</span><span class="tema-tag">Filantropia</span></div>
+      <div class="relevancia">Score: +0.70</div>
+    </div>
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/gracinha-brasilia" target="_blank" rel="noopener">Gracinha Caiado representa Goiás em evento sobre saúde da mulher em Brasília</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">Correio Braziliense · 20/05/2026 19:24</div>
+      <div class="noticia-resumo">A primeira-dama participou do Fórum Nacional de Saúde da Mulher e apresentou iniciativas goianas.</div>
+      <div class="noticia-justificativa">Representação institucional positiva projetando iniciativas de Goiás em âmbito nacional.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Saúde da Mulher</span><span class="tema-tag">Representação Institucional</span><span class="tema-tag">Brasília</span></div>
+      <div class="relevancia">Score: +0.65</div>
+    </div></div>
+            </div>
+            <div class="secao-pessoa">
+              <h2>Ronaldo Caiado <small style="font-size:0.7em;color:#718096;font-weight:400">(Governador de Goiás)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/caiado-investimentos" target="_blank" rel="noopener">Caiado anuncia R$ 500 milhões em investimentos para infraestrutura de Goiás</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">Jornal O Popular · 24/05/2026 19:24</div>
+      <div class="noticia-resumo">O governador Ronaldo Caiado assinou pacote de investimentos em rodovias e saneamento para 50 municípios goianos.</div>
+      <div class="noticia-justificativa">Anúncio de investimentos públicos em infraestrutura com impacto direto na população é amplamente positivo.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Infraestrutura</span><span class="tema-tag">Investimentos</span><span class="tema-tag">Governo Estadual</span></div>
+      <div class="relevancia">Score: +0.75</div>
+    </div>
+    <div class="card-noticia Misto">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/caiado-reforma" target="_blank" rel="noopener">Caiado defende reforma tributária e critica impacto nos estados</a>
+        </div>
+        <span class="badge Misto" style="white-space:nowrap">Misto</span>
+      </div>
+      <div class="noticia-meta">Folha de Goiás · 23/05/2026 19:24</div>
+      <div class="noticia-resumo">Em encontro com governadores, Caiado afirmou que a reforma tributária prejudica os estados produtores do agronegócio.</div>
+      <div class="noticia-justificativa">Governador critica medida federal, contexto de conflito político com tom parcialmente negativo.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Reforma Tributária</span><span class="tema-tag">Agronegócio</span><span class="tema-tag">Federalismo</span></div>
+      <div class="relevancia">Score: -0.15</div>
+    </div>
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/aprovacao-caiado" target="_blank" rel="noopener">Índice de aprovação do governo Caiado chega a 68%, aponta pesquisa</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">Datafolha Regional · 22/05/2026 19:24</div>
+      <div class="noticia-resumo">Pesquisa de opinião aponta que 68% dos goianos aprovam a gestão do governador Ronaldo Caiado.</div>
+      <div class="noticia-justificativa">Alta aprovação popular indica gestão bem avaliada pela população.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Pesquisa</span><span class="tema-tag">Aprovação Popular</span><span class="tema-tag">Governo</span></div>
+      <div class="relevancia">Score: +0.82</div>
+    </div>
+    <div class="card-noticia Negativo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/tce-saude" target="_blank" rel="noopener">TCE aponta irregularidades em contratos da Secretaria de Saúde de Goiás</a>
+        </div>
+        <span class="badge Negativo" style="white-space:nowrap">Negativo</span>
+      </div>
+      <div class="noticia-meta">Metrópoles Goiás · 21/05/2026 19:24</div>
+      <div class="noticia-resumo">Tribunal de Contas do Estado identificou sobrepreço em licitações de medicamentos na gestão estadual.</div>
+      <div class="noticia-justificativa">Apontamento de irregularidades por órgão fiscalizador é notícia negativa para o governo.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">TCE</span><span class="tema-tag">Saúde Pública</span><span class="tema-tag">Licitações</span><span class="tema-tag">Fiscalização</span></div>
+      <div class="relevancia">Score: -0.70</div>
+    </div>
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/hospital-anapolis" target="_blank" rel="noopener">Governador inaugura hospital regional em Anápolis</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">Agência Goiás · 20/05/2026 19:24</div>
+      <div class="noticia-resumo">Caiado participou da inauguração do Hospital Regional de Anápolis, unidade com 200 leitos.</div>
+      <div class="noticia-justificativa">Entrega de infraestrutura de saúde é notícia positiva para a população e para o governo.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Saúde</span><span class="tema-tag">Obras Públicas</span><span class="tema-tag">Interior</span></div>
+      <div class="relevancia">Score: +0.78</div>
+    </div></div>
+            </div>
+            <div class="secao-pessoa">
+              <h2>Adryanna Caiado <small style="font-size:0.7em;color:#718096;font-weight:400">(Família Caiado)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/adryanna-cerrado" target="_blank" rel="noopener">Adryanna Caiado participa de ação de preservação ambiental no Cerrado</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">Greenpeace Brasil / Agência Goiás · 23/05/2026 19:24</div>
+      <div class="noticia-resumo">Filha do governador participou de mutirão de reflorestamento no Parque Estadual da Serra de Jaraguá.</div>
+      <div class="noticia-justificativa">Participação em causa ambiental e ação de preservação é positiva para a imagem pública.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Meio Ambiente</span><span class="tema-tag">Cerrado</span><span class="tema-tag">Reflorestamento</span></div>
+      <div class="relevancia">Score: +0.60</div>
+    </div>
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/adryanna-saude-mental" target="_blank" rel="noopener">Adryanna Caiado defende ampliação de políticas de saúde mental em evento nacional</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">Veja Saúde · 21/05/2026 19:24</div>
+      <div class="noticia-resumo">Em palestra em São Paulo, Adryanna Caiado falou sobre a importância de políticas públicas de saúde mental para jovens.</div>
+      <div class="noticia-justificativa">Advocacia por causa de saúde pública relevante gera cobertura positiva.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Saúde Mental</span><span class="tema-tag">Juventude</span><span class="tema-tag">Políticas Públicas</span></div>
+      <div class="relevancia">Score: +0.72</div>
+    </div></div>
+            </div>
+            <div class="secao-pessoa">
+              <h2>Roberta Wendorf Carvalho <small style="font-size:0.7em;color:#718096;font-weight:400">(Personalidade pública)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/roberta-conselho-cultura" target="_blank" rel="noopener">Roberta Wendorf Carvalho é empossada no Conselho Estadual de Cultura de Goiás</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">Agência Goiás · 23/05/2026 19:24</div>
+      <div class="noticia-resumo">Cerimônia de posse marcou a entrada de Roberta Wendorf Carvalho como conselheira do colegiado cultural goiano.</div>
+      <div class="noticia-justificativa">Posse em cargo de representação cultural é evento positivo de reconhecimento institucional.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Cultura</span><span class="tema-tag">Representação Institucional</span><span class="tema-tag">Goiás</span></div>
+      <div class="relevancia">Score: +0.68</div>
+    </div>
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/cultura-festivais" target="_blank" rel="noopener">Investimento em cultura: Goiás destina R$ 8 milhões para festivais regionais</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">Folha de Goiás · 21/05/2026 19:24</div>
+      <div class="noticia-resumo">Com participação ativa do conselho estadual, Goiás anuncia edital para apoio a festivais de cultura popular.</div>
+      <div class="noticia-justificativa">Política de fomento à cultura regional representa notícia positiva para os envolvidos.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Cultura</span><span class="tema-tag">Festivais</span><span class="tema-tag">Editais</span><span class="tema-tag">Fomento Cultural</span></div>
+      <div class="relevancia">Score: +0.55</div>
+    </div></div>
+            </div>
+            <div class="secao-pessoa">
+              <h2>Decio Wendorf <small style="font-size:0.7em;color:#718096;font-weight:400">(Personalidade pública)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia Neutro">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/decio-empresarial" target="_blank" rel="noopener">Décio Wendorf participa de reunião do setor empresarial em Goiânia</a>
+        </div>
+        <span class="badge Neutro" style="white-space:nowrap">Neutro</span>
+      </div>
+      <div class="noticia-meta">Diário do Comércio Goiás · 22/05/2026 19:24</div>
+      <div class="noticia-resumo">Encontro reuniu líderes do setor produtivo para discutir o cenário econômico de Goiás no segundo semestre.</div>
+      <div class="noticia-justificativa">Reunião empresarial sem destaque positivo ou negativo — cobertura informativa neutra.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Economia</span><span class="tema-tag">Empresarial</span><span class="tema-tag">Goiânia</span></div>
+      <div class="relevancia">Score: +0.05</div>
+    </div></div>
+            </div>
+            <div class="secao-pessoa">
+              <h2>Daniel Vilela <small style="font-size:0.7em;color:#718096;font-weight:400">(Político de Goiás)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/daniel-vilela-candidatura" target="_blank" rel="noopener">Daniel Vilela fortalece candidatura ao governo de Goiás com apoios regionais</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">O Popular · 24/05/2026 19:24</div>
+      <div class="noticia-resumo">O presidente do MDB goiano articula apoios de prefeitos e lideranças do interior para a disputa eleitoral de 2026.</div>
+      <div class="noticia-justificativa">Crescimento de articulação política e conquista de apoios é notícia positiva para o político.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Eleições 2026</span><span class="tema-tag">MDB</span><span class="tema-tag">Articulação Política</span><span class="tema-tag">Candidatura</span></div>
+      <div class="relevancia">Score: +0.55</div>
+    </div>
+    <div class="card-noticia Misto">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/vilela-seguranca" target="_blank" rel="noopener">Vilela critica política de segurança pública do estado e propõe alternativas</a>
+        </div>
+        <span class="badge Misto" style="white-space:nowrap">Misto</span>
+      </div>
+      <div class="noticia-meta">Metrópoles Goiás · 23/05/2026 19:24</div>
+      <div class="noticia-resumo">Daniel Vilela apresentou proposta de reestruturação da segurança pública para Goiás em evento do MDB.</div>
+      <div class="noticia-justificativa">Crítica ao governo rival combinada com proposta alternativa resulta em cobertura mista.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Segurança Pública</span><span class="tema-tag">Oposição</span><span class="tema-tag">Propostas</span><span class="tema-tag">MDB</span></div>
+      <div class="relevancia">Score: +0.10</div>
+    </div>
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/mdb-convencao" target="_blank" rel="noopener">MDB goiano realiza convenção e confirma Daniel Vilela como pré-candidato</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">Globo Goiás · 22/05/2026 19:24</div>
+      <div class="noticia-resumo">Convenção regional do MDB formalizou a pré-candidatura de Daniel Vilela ao governo do estado.</div>
+      <div class="noticia-justificativa">Formalização de candidatura com apoio partidário é marco positivo na trajetória política.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Eleições</span><span class="tema-tag">MDB</span><span class="tema-tag">Convenção Partidária</span></div>
+      <div class="relevancia">Score: +0.70</div>
+    </div>
+    <div class="card-noticia Negativo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/vilela-campanha-anterior" target="_blank" rel="noopener">Ficha limpa: Daniel Vilela enfrenta questionamentos sobre financiamento de campanha anterior</a>
+        </div>
+        <span class="badge Negativo" style="white-space:nowrap">Negativo</span>
+      </div>
+      <div class="noticia-meta">Poder360 · 20/05/2026 19:24</div>
+      <div class="noticia-resumo">Documentos obtidos pelo Poder360 revelam questionamentos do TSE sobre prestação de contas de campanha passada.</div>
+      <div class="noticia-justificativa">Questionamentos legais sobre financiamento eleitoral representam risco político e cobertura negativa.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Ficha Limpa</span><span class="tema-tag">TSE</span><span class="tema-tag">Financiamento Eleitoral</span><span class="tema-tag">Risco Político</span></div>
+      <div class="relevancia">Score: -0.65</div>
+    </div></div>
+            </div>
+            <div class="secao-pessoa">
+              <h2>Iara Netto Vilela <small style="font-size:0.7em;color:#718096;font-weight:400">(Personalidade pública)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/iara-alfabetizacao" target="_blank" rel="noopener">Iara Netto Vilela lidera projeto de alfabetização em comunidades rurais de Goiás</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">Agência Goiás · 23/05/2026 19:24</div>
+      <div class="noticia-resumo">O projeto coordenado por Iara Netto Vilela já beneficiou mais de 2 mil adultos em zonas rurais do estado.</div>
+      <div class="noticia-justificativa">Projeto de alfabetização em comunidades carentes tem impacto social alto e cobertura muito positiva.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Educação</span><span class="tema-tag">Alfabetização</span><span class="tema-tag">Zona Rural</span><span class="tema-tag">Inclusão Social</span></div>
+      <div class="relevancia">Score: +0.80</div>
+    </div>
+    <div class="card-noticia Positivo">
+      <div class="noticia-header">
+        <div class="noticia-titulo">
+          <a href="https://exemplo.com/iara-oab-homenagem" target="_blank" rel="noopener">Iara Vilela é homenageada pela OAB-GO por atuação em direitos humanos</a>
+        </div>
+        <span class="badge Positivo" style="white-space:nowrap">Positivo</span>
+      </div>
+      <div class="noticia-meta">OAB Goiás / Jornal Jurídico · 21/05/2026 19:24</div>
+      <div class="noticia-resumo">A Ordem dos Advogados do Brasil seccional Goiás entregou medalha de mérito a Iara Netto Vilela por sua contribuição aos direitos humanos.</div>
+      <div class="noticia-justificativa">Homenagem de entidade representativa por atuação em direitos humanos é notícia altamente positiva.</div>
+      <div style="margin-top:0.5rem"><span class="tema-tag">Direitos Humanos</span><span class="tema-tag">OAB</span><span class="tema-tag">Homenagem</span><span class="tema-tag">Reconhecimento</span></div>
+      <div class="relevancia">Score: +0.88</div>
+    </div></div>
+            </div>
+</div>
+<footer>Sistema de Monitoramento de Notícias com Análise de Sentimento · 24/05/2026 19:24 UTC</footer>
+</body>
+</html>
