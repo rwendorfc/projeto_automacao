@@ -53,6 +53,12 @@ DELAY_ENTRE_REQUISICOES = 1.5  # segundos
 
 OUTPUT_DIR = "resultados"
 
+# Agendamento
+INTERVALO_HORAS = 4
+# Horários fixos de execução (alternativa ao intervalo); deixe vazio para usar INTERVALO_HORAS
+# Exemplo: ["06:00", "10:00", "14:00", "18:00", "22:00"]
+HORARIOS_FIXOS: list[str] = []
+
 # Chaves de API (configure via variáveis de ambiente ou diretamente aqui)
 import os
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")

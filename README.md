@@ -23,6 +23,7 @@ Sistema automatizado de monitoramento de notícias para personalidades públicas
 - **Relatório HTML** interativo e visualmente organizado
 - **Export JSON** com todos os dados estruturados
 - **Modo demo** para testes sem acesso à rede
+- **Agendamento automático** a cada 4 horas com histórico de execuções
 
 ## Instalação
 
@@ -64,31 +65,83 @@ python monitor.py --sem-sentimento
 python monitor.py --saida /caminho/para/saida
 ```
 
+## Agendamento (a cada 4 horas)
+
+### Opção 1 — Daemon Python (recomendado)
+
+```bash
+cd news_monitor
+
+# Inicia o daemon (roda indefinidamente, Ctrl+C para parar)
+python scheduler.py
+
+# Verificar próxima execução
+python scheduler.py --status
+
+# Executar uma vez imediatamente
+python scheduler.py --uma-vez
+```
+
+### Opção 2 — Cron
+
+```bash
+# Instala automaticamente o cron job (a cada 4h: 0h, 4h, 8h, 12h, 16h, 20h)
+bash news_monitor/install_cron.sh
+
+# Verificar: crontab -l
+# Remover:   crontab -e
+```
+
+### Opção 3 — systemd (servidores Linux)
+
+```bash
+# Copie os arquivos de unidade
+sudo cp news_monitor/systemd/news-monitor.service /etc/systemd/system/
+sudo cp news_monitor/systemd/news-monitor.timer   /etc/systemd/system/
+
+# Edite o .service com seu usuário e caminho real
+sudo nano /etc/systemd/system/news-monitor.service
+
+# Ative e inicie
+sudo systemctl daemon-reload
+sudo systemctl enable --now news-monitor.timer
+
+# Verificar status
+sudo systemctl status news-monitor.timer
+sudo journalctl -u news-monitor.service -f
+```
+
 ## Estrutura dos arquivos gerados
+
+Cada execução cria um subdiretório com timestamp; `latest/` aponta para a mais recente.
 
 ```
 resultados/
-├── relatorio.html    ← relatório visual (abra no navegador)
-└── resultados.json   ← dados estruturados em JSON
+├── latest/               ← symlink para a execução mais recente
+├── 2026-05-25_06-00/
+│   ├── relatorio.html
+│   └── resultados.json
+├── 2026-05-25_10-00/
+│   ├── relatorio.html
+│   └── resultados.json
+└── ...                   ← mantém as últimas 24 execuções (6 dias)
 ```
 
 ## Estrutura do projeto
 
 ```
 news_monitor/
-├── config.py             # configurações e lista de pessoas
-├── news_fetcher.py       # coleta de notícias (Google News RSS + NewsAPI)
-├── sentiment_analyzer.py # análise de sentimento via Claude API
-├── report_generator.py   # geração de relatórios HTML e JSON
-├── demo_data.py          # dados mockados para demonstração
-├── monitor.py            # ponto de entrada principal
-└── setup.py              # instalação e verificação do ambiente
-```
-
-## Automatização (cron)
-
-Para executar diariamente às 7h:
-
-```cron
-0 7 * * * cd /caminho/projeto/news_monitor && ANTHROPIC_API_KEY=sk-ant-... python monitor.py >> /var/log/news_monitor.log 2>&1
+├── config.py              # configurações, pessoas e intervalo (INTERVALO_HORAS = 4)
+├── news_fetcher.py        # coleta via Google News RSS + NewsAPI
+├── sentiment_analyzer.py  # análise de sentimento via Claude API
+├── report_generator.py    # relatórios HTML e JSON
+├── demo_data.py           # dados mockados para demonstração
+├── monitor.py             # execução manual (CLI)
+├── scheduler.py           # daemon de agendamento (a cada 4h)
+├── run_monitor.sh         # wrapper para cron
+├── install_cron.sh        # instalador do cron job
+├── setup.py               # verificação do ambiente
+└── systemd/               # unidades systemd (serviços de servidor)
+    ├── news-monitor.service
+    └── news-monitor.timer
 ```

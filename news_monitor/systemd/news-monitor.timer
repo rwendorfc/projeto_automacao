@@ -1,0 +1,14 @@
+[Unit]
+Description=Executa monitoramento de notícias a cada 4 horas
+Requires=news-monitor.service
+
+[Timer]
+# Executa a cada 4 horas a partir da meia-noite
+OnCalendar=*-*-* 00/4:00:00
+# Aguarda até 5 minutos se o sistema estiver ocupado
+AccuracySec=5min
+# Persiste: executa imediatamente se perdeu um horário (ex: máquina estava desligada)
+Persistent=true
+
+[Install]
+WantedBy=timers.target
