@@ -61,5 +61,4 @@ HORARIOS_FIXOS: list[str] = []
 
 # Chaves de API (configure via variáveis de ambiente ou diretamente aqui)
 import os
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 NEWSAPI_KEY = os.environ.get("NEWSAPI_KEY", "")  # https://newsapi.org (plano gratuito disponível)

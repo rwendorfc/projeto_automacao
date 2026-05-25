@@ -1,462 +1,185 @@
 {
-  "gerado_em": "2026-05-25T11:00:15.682303+00:00",
+  "gerado_em": "2026-05-25T11:05:35.083699+00:00",
   "dados": [
     {
       "pessoa": "Gracinha Caiado",
       "cargo": "Primeira-dama de Goiás",
-      "resumo": {
-        "total_noticias": 3,
-        "score_medio": 0.733,
-        "tom_geral": "Positivo",
-        "distribuicao": {
-          "Positivo": 3,
-          "Negativo": 0,
-          "Neutro": 0,
-          "Misto": 0
-        },
-        "top_temas": [
-          "Social",
-          "Mulheres",
-          "Capacitação",
-          "Inclusão",
-          "Assistência Social"
-        ]
-      },
+      "total_noticias": 3,
       "noticias": [
         {
           "titulo": "Gracinha Caiado lança programa de capacitação profissional para mulheres em Goiás",
           "url": "https://exemplo.com/gracinha-mulheres",
           "fonte": "Globo Goiás",
-          "publicado_em": "2026-05-25T11:00:15.679052+00:00",
-          "resumo": "A primeira-dama Gracinha Caiado lançou o programa 'Goiás Mulher' voltado à qualificação profissional de 10 mil mulheres vulneráveis.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.85,
-          "justificativa": "Programa social voltado à inclusão feminina e geração de emprego tem conotação muito positiva.",
-          "temas": [
-            "Social",
-            "Mulheres",
-            "Capacitação",
-            "Inclusão"
-          ]
+          "publicado_em": "2026-05-25T11:05:35.082363+00:00",
+          "resumo": "A primeira-dama Gracinha Caiado lançou o programa 'Goiás Mulher' voltado à qualificação profissional de 10 mil mulheres vulneráveis."
         },
         {
           "titulo": "Primeira-dama visita entidades sociais no interior goiano",
           "url": "https://exemplo.com/gracinha-visita",
           "fonte": "O Popular",
-          "publicado_em": "2026-05-23T11:00:15.679052+00:00",
-          "resumo": "Gracinha Caiado percorreu municípios do interior em ação de doação de cestas básicas e acompanhamento de projetos sociais.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.7,
-          "justificativa": "Ação humanitária com entrega direta de benefícios à população carente é notícia positiva.",
-          "temas": [
-            "Assistência Social",
-            "Interior",
-            "Filantropia"
-          ]
+          "publicado_em": "2026-05-23T11:05:35.082363+00:00",
+          "resumo": "Gracinha Caiado percorreu municípios do interior em ação de doação de cestas básicas e acompanhamento de projetos sociais."
         },
         {
           "titulo": "Gracinha Caiado representa Goiás em evento sobre saúde da mulher em Brasília",
           "url": "https://exemplo.com/gracinha-brasilia",
           "fonte": "Correio Braziliense",
-          "publicado_em": "2026-05-21T11:00:15.679052+00:00",
-          "resumo": "A primeira-dama participou do Fórum Nacional de Saúde da Mulher e apresentou iniciativas goianas.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.65,
-          "justificativa": "Representação institucional positiva projetando iniciativas de Goiás em âmbito nacional.",
-          "temas": [
-            "Saúde da Mulher",
-            "Representação Institucional",
-            "Brasília"
-          ]
+          "publicado_em": "2026-05-21T11:05:35.082363+00:00",
+          "resumo": "A primeira-dama participou do Fórum Nacional de Saúde da Mulher e apresentou iniciativas goianas."
         }
       ]
     },
     {
       "pessoa": "Ronaldo Caiado",
       "cargo": "Governador de Goiás",
-      "resumo": {
-        "total_noticias": 5,
-        "score_medio": 0.3,
-        "tom_geral": "Positivo",
-        "distribuicao": {
-          "Positivo": 3,
-          "Negativo": 1,
-          "Neutro": 0,
-          "Misto": 1
-        },
-        "top_temas": [
-          "Infraestrutura",
-          "Investimentos",
-          "Governo Estadual",
-          "Reforma Tributária",
-          "Agronegócio"
-        ]
-      },
+      "total_noticias": 5,
       "noticias": [
         {
           "titulo": "Caiado anuncia R$ 500 milhões em investimentos para infraestrutura de Goiás",
           "url": "https://exemplo.com/caiado-investimentos",
           "fonte": "Jornal O Popular",
-          "publicado_em": "2026-05-25T11:00:15.679052+00:00",
-          "resumo": "O governador Ronaldo Caiado assinou pacote de investimentos em rodovias e saneamento para 50 municípios goianos.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.75,
-          "justificativa": "Anúncio de investimentos públicos em infraestrutura com impacto direto na população é amplamente positivo.",
-          "temas": [
-            "Infraestrutura",
-            "Investimentos",
-            "Governo Estadual"
-          ]
+          "publicado_em": "2026-05-25T11:05:35.082363+00:00",
+          "resumo": "O governador Ronaldo Caiado assinou pacote de investimentos em rodovias e saneamento para 50 municípios goianos."
         },
         {
           "titulo": "Caiado defende reforma tributária e critica impacto nos estados",
           "url": "https://exemplo.com/caiado-reforma",
           "fonte": "Folha de Goiás",
-          "publicado_em": "2026-05-24T11:00:15.679052+00:00",
-          "resumo": "Em encontro com governadores, Caiado afirmou que a reforma tributária prejudica os estados produtores do agronegócio.",
-          "sentimento": "Misto",
-          "score_sentimento": -0.15,
-          "justificativa": "Governador critica medida federal, contexto de conflito político com tom parcialmente negativo.",
-          "temas": [
-            "Reforma Tributária",
-            "Agronegócio",
-            "Federalismo"
-          ]
+          "publicado_em": "2026-05-24T11:05:35.082363+00:00",
+          "resumo": "Em encontro com governadores, Caiado afirmou que a reforma tributária prejudica os estados produtores do agronegócio."
         },
         {
           "titulo": "Índice de aprovação do governo Caiado chega a 68%, aponta pesquisa",
           "url": "https://exemplo.com/aprovacao-caiado",
           "fonte": "Datafolha Regional",
-          "publicado_em": "2026-05-23T11:00:15.679052+00:00",
-          "resumo": "Pesquisa de opinião aponta que 68% dos goianos aprovam a gestão do governador Ronaldo Caiado.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.82,
-          "justificativa": "Alta aprovação popular indica gestão bem avaliada pela população.",
-          "temas": [
-            "Pesquisa",
-            "Aprovação Popular",
-            "Governo"
-          ]
+          "publicado_em": "2026-05-23T11:05:35.082363+00:00",
+          "resumo": "Pesquisa de opinião aponta que 68% dos goianos aprovam a gestão do governador Ronaldo Caiado."
         },
         {
           "titulo": "TCE aponta irregularidades em contratos da Secretaria de Saúde de Goiás",
           "url": "https://exemplo.com/tce-saude",
           "fonte": "Metrópoles Goiás",
-          "publicado_em": "2026-05-22T11:00:15.679052+00:00",
-          "resumo": "Tribunal de Contas do Estado identificou sobrepreço em licitações de medicamentos na gestão estadual.",
-          "sentimento": "Negativo",
-          "score_sentimento": -0.7,
-          "justificativa": "Apontamento de irregularidades por órgão fiscalizador é notícia negativa para o governo.",
-          "temas": [
-            "TCE",
-            "Saúde Pública",
-            "Licitações",
-            "Fiscalização"
-          ]
+          "publicado_em": "2026-05-22T11:05:35.082363+00:00",
+          "resumo": "Tribunal de Contas do Estado identificou sobrepreço em licitações de medicamentos na gestão estadual."
         },
         {
           "titulo": "Governador inaugura hospital regional em Anápolis",
           "url": "https://exemplo.com/hospital-anapolis",
           "fonte": "Agência Goiás",
-          "publicado_em": "2026-05-21T11:00:15.679052+00:00",
-          "resumo": "Caiado participou da inauguração do Hospital Regional de Anápolis, unidade com 200 leitos.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.78,
-          "justificativa": "Entrega de infraestrutura de saúde é notícia positiva para a população e para o governo.",
-          "temas": [
-            "Saúde",
-            "Obras Públicas",
-            "Interior"
-          ]
+          "publicado_em": "2026-05-21T11:05:35.082363+00:00",
+          "resumo": "Caiado participou da inauguração do Hospital Regional de Anápolis, unidade com 200 leitos."
         }
       ]
     },
     {
       "pessoa": "Adryanna Caiado",
       "cargo": "Família Caiado",
-      "resumo": {
-        "total_noticias": 2,
-        "score_medio": 0.66,
-        "tom_geral": "Positivo",
-        "distribuicao": {
-          "Positivo": 2,
-          "Negativo": 0,
-          "Neutro": 0,
-          "Misto": 0
-        },
-        "top_temas": [
-          "Meio Ambiente",
-          "Cerrado",
-          "Reflorestamento",
-          "Saúde Mental",
-          "Juventude"
-        ]
-      },
+      "total_noticias": 2,
       "noticias": [
         {
           "titulo": "Adryanna Caiado participa de ação de preservação ambiental no Cerrado",
           "url": "https://exemplo.com/adryanna-cerrado",
           "fonte": "Greenpeace Brasil / Agência Goiás",
-          "publicado_em": "2026-05-24T11:00:15.679052+00:00",
-          "resumo": "Filha do governador participou de mutirão de reflorestamento no Parque Estadual da Serra de Jaraguá.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.6,
-          "justificativa": "Participação em causa ambiental e ação de preservação é positiva para a imagem pública.",
-          "temas": [
-            "Meio Ambiente",
-            "Cerrado",
-            "Reflorestamento"
-          ]
+          "publicado_em": "2026-05-24T11:05:35.082363+00:00",
+          "resumo": "Filha do governador participou de mutirão de reflorestamento no Parque Estadual da Serra de Jaraguá."
         },
         {
           "titulo": "Adryanna Caiado defende ampliação de políticas de saúde mental em evento nacional",
           "url": "https://exemplo.com/adryanna-saude-mental",
           "fonte": "Veja Saúde",
-          "publicado_em": "2026-05-22T11:00:15.679052+00:00",
-          "resumo": "Em palestra em São Paulo, Adryanna Caiado falou sobre a importância de políticas públicas de saúde mental para jovens.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.72,
-          "justificativa": "Advocacia por causa de saúde pública relevante gera cobertura positiva.",
-          "temas": [
-            "Saúde Mental",
-            "Juventude",
-            "Políticas Públicas"
-          ]
+          "publicado_em": "2026-05-22T11:05:35.082363+00:00",
+          "resumo": "Em palestra em São Paulo, Adryanna Caiado falou sobre a importância de políticas públicas de saúde mental para jovens."
         }
       ]
     },
     {
       "pessoa": "Roberta Wendorf Carvalho",
       "cargo": "Personalidade pública",
-      "resumo": {
-        "total_noticias": 2,
-        "score_medio": 0.615,
-        "tom_geral": "Positivo",
-        "distribuicao": {
-          "Positivo": 2,
-          "Negativo": 0,
-          "Neutro": 0,
-          "Misto": 0
-        },
-        "top_temas": [
-          "Cultura",
-          "Representação Institucional",
-          "Goiás",
-          "Festivais",
-          "Editais"
-        ]
-      },
+      "total_noticias": 2,
       "noticias": [
         {
           "titulo": "Roberta Wendorf Carvalho é empossada no Conselho Estadual de Cultura de Goiás",
           "url": "https://exemplo.com/roberta-conselho-cultura",
           "fonte": "Agência Goiás",
-          "publicado_em": "2026-05-24T11:00:15.679052+00:00",
-          "resumo": "Cerimônia de posse marcou a entrada de Roberta Wendorf Carvalho como conselheira do colegiado cultural goiano.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.68,
-          "justificativa": "Posse em cargo de representação cultural é evento positivo de reconhecimento institucional.",
-          "temas": [
-            "Cultura",
-            "Representação Institucional",
-            "Goiás"
-          ]
+          "publicado_em": "2026-05-24T11:05:35.082363+00:00",
+          "resumo": "Cerimônia de posse marcou a entrada de Roberta Wendorf Carvalho como conselheira do colegiado cultural goiano."
         },
         {
           "titulo": "Investimento em cultura: Goiás destina R$ 8 milhões para festivais regionais",
           "url": "https://exemplo.com/cultura-festivais",
           "fonte": "Folha de Goiás",
-          "publicado_em": "2026-05-22T11:00:15.679052+00:00",
-          "resumo": "Com participação ativa do conselho estadual, Goiás anuncia edital para apoio a festivais de cultura popular.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.55,
-          "justificativa": "Política de fomento à cultura regional representa notícia positiva para os envolvidos.",
-          "temas": [
-            "Cultura",
-            "Festivais",
-            "Editais",
-            "Fomento Cultural"
-          ]
+          "publicado_em": "2026-05-22T11:05:35.082363+00:00",
+          "resumo": "Com participação ativa do conselho estadual, Goiás anuncia edital para apoio a festivais de cultura popular."
         }
       ]
     },
     {
       "pessoa": "Decio Wendorf",
       "cargo": "Personalidade pública",
-      "resumo": {
-        "total_noticias": 1,
-        "score_medio": 0.05,
-        "tom_geral": "Neutro",
-        "distribuicao": {
-          "Positivo": 0,
-          "Negativo": 0,
-          "Neutro": 1,
-          "Misto": 0
-        },
-        "top_temas": [
-          "Economia",
-          "Empresarial",
-          "Goiânia"
-        ]
-      },
+      "total_noticias": 1,
       "noticias": [
         {
           "titulo": "Décio Wendorf participa de reunião do setor empresarial em Goiânia",
           "url": "https://exemplo.com/decio-empresarial",
           "fonte": "Diário do Comércio Goiás",
-          "publicado_em": "2026-05-23T11:00:15.679052+00:00",
-          "resumo": "Encontro reuniu líderes do setor produtivo para discutir o cenário econômico de Goiás no segundo semestre.",
-          "sentimento": "Neutro",
-          "score_sentimento": 0.05,
-          "justificativa": "Reunião empresarial sem destaque positivo ou negativo — cobertura informativa neutra.",
-          "temas": [
-            "Economia",
-            "Empresarial",
-            "Goiânia"
-          ]
+          "publicado_em": "2026-05-23T11:05:35.082363+00:00",
+          "resumo": "Encontro reuniu líderes do setor produtivo para discutir o cenário econômico de Goiás no segundo semestre."
         }
       ]
     },
     {
       "pessoa": "Daniel Vilela",
       "cargo": "Político de Goiás",
-      "resumo": {
-        "total_noticias": 4,
-        "score_medio": 0.175,
-        "tom_geral": "Misto",
-        "distribuicao": {
-          "Positivo": 2,
-          "Negativo": 1,
-          "Neutro": 0,
-          "Misto": 1
-        },
-        "top_temas": [
-          "MDB",
-          "Eleições 2026",
-          "Articulação Política",
-          "Candidatura",
-          "Segurança Pública"
-        ]
-      },
+      "total_noticias": 4,
       "noticias": [
         {
           "titulo": "Daniel Vilela fortalece candidatura ao governo de Goiás com apoios regionais",
           "url": "https://exemplo.com/daniel-vilela-candidatura",
           "fonte": "O Popular",
-          "publicado_em": "2026-05-25T11:00:15.679052+00:00",
-          "resumo": "O presidente do MDB goiano articula apoios de prefeitos e lideranças do interior para a disputa eleitoral de 2026.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.55,
-          "justificativa": "Crescimento de articulação política e conquista de apoios é notícia positiva para o político.",
-          "temas": [
-            "Eleições 2026",
-            "MDB",
-            "Articulação Política",
-            "Candidatura"
-          ]
+          "publicado_em": "2026-05-25T11:05:35.082363+00:00",
+          "resumo": "O presidente do MDB goiano articula apoios de prefeitos e lideranças do interior para a disputa eleitoral de 2026."
         },
         {
           "titulo": "Vilela critica política de segurança pública do estado e propõe alternativas",
           "url": "https://exemplo.com/vilela-seguranca",
           "fonte": "Metrópoles Goiás",
-          "publicado_em": "2026-05-24T11:00:15.679052+00:00",
-          "resumo": "Daniel Vilela apresentou proposta de reestruturação da segurança pública para Goiás em evento do MDB.",
-          "sentimento": "Misto",
-          "score_sentimento": 0.1,
-          "justificativa": "Crítica ao governo rival combinada com proposta alternativa resulta em cobertura mista.",
-          "temas": [
-            "Segurança Pública",
-            "Oposição",
-            "Propostas",
-            "MDB"
-          ]
+          "publicado_em": "2026-05-24T11:05:35.082363+00:00",
+          "resumo": "Daniel Vilela apresentou proposta de reestruturação da segurança pública para Goiás em evento do MDB."
         },
         {
           "titulo": "MDB goiano realiza convenção e confirma Daniel Vilela como pré-candidato",
           "url": "https://exemplo.com/mdb-convencao",
           "fonte": "Globo Goiás",
-          "publicado_em": "2026-05-23T11:00:15.679052+00:00",
-          "resumo": "Convenção regional do MDB formalizou a pré-candidatura de Daniel Vilela ao governo do estado.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.7,
-          "justificativa": "Formalização de candidatura com apoio partidário é marco positivo na trajetória política.",
-          "temas": [
-            "Eleições",
-            "MDB",
-            "Convenção Partidária"
-          ]
+          "publicado_em": "2026-05-23T11:05:35.082363+00:00",
+          "resumo": "Convenção regional do MDB formalizou a pré-candidatura de Daniel Vilela ao governo do estado."
         },
         {
           "titulo": "Ficha limpa: Daniel Vilela enfrenta questionamentos sobre financiamento de campanha anterior",
           "url": "https://exemplo.com/vilela-campanha-anterior",
           "fonte": "Poder360",
-          "publicado_em": "2026-05-21T11:00:15.679052+00:00",
-          "resumo": "Documentos obtidos pelo Poder360 revelam questionamentos do TSE sobre prestação de contas de campanha passada.",
-          "sentimento": "Negativo",
-          "score_sentimento": -0.65,
-          "justificativa": "Questionamentos legais sobre financiamento eleitoral representam risco político e cobertura negativa.",
-          "temas": [
-            "Ficha Limpa",
-            "TSE",
-            "Financiamento Eleitoral",
-            "Risco Político"
-          ]
+          "publicado_em": "2026-05-21T11:05:35.082363+00:00",
+          "resumo": "Documentos revelam questionamentos do TSE sobre prestação de contas de campanha passada."
         }
       ]
     },
     {
       "pessoa": "Iara Netto Vilela",
       "cargo": "Personalidade pública",
-      "resumo": {
-        "total_noticias": 2,
-        "score_medio": 0.84,
-        "tom_geral": "Positivo",
-        "distribuicao": {
-          "Positivo": 2,
-          "Negativo": 0,
-          "Neutro": 0,
-          "Misto": 0
-        },
-        "top_temas": [
-          "Educação",
-          "Alfabetização",
-          "Zona Rural",
-          "Inclusão Social",
-          "Direitos Humanos"
-        ]
-      },
+      "total_noticias": 2,
       "noticias": [
         {
           "titulo": "Iara Netto Vilela lidera projeto de alfabetização em comunidades rurais de Goiás",
           "url": "https://exemplo.com/iara-alfabetizacao",
           "fonte": "Agência Goiás",
-          "publicado_em": "2026-05-24T11:00:15.679052+00:00",
-          "resumo": "O projeto coordenado por Iara Netto Vilela já beneficiou mais de 2 mil adultos em zonas rurais do estado.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.8,
-          "justificativa": "Projeto de alfabetização em comunidades carentes tem impacto social alto e cobertura muito positiva.",
-          "temas": [
-            "Educação",
-            "Alfabetização",
-            "Zona Rural",
-            "Inclusão Social"
-          ]
+          "publicado_em": "2026-05-24T11:05:35.082363+00:00",
+          "resumo": "O projeto coordenado por Iara Netto Vilela já beneficiou mais de 2 mil adultos em zonas rurais do estado."
         },
         {
           "titulo": "Iara Vilela é homenageada pela OAB-GO por atuação em direitos humanos",
           "url": "https://exemplo.com/iara-oab-homenagem",
           "fonte": "OAB Goiás / Jornal Jurídico",
-          "publicado_em": "2026-05-22T11:00:15.679052+00:00",
-          "resumo": "A Ordem dos Advogados do Brasil seccional Goiás entregou medalha de mérito a Iara Netto Vilela por sua contribuição aos direitos humanos.",
-          "sentimento": "Positivo",
-          "score_sentimento": 0.88,
-          "justificativa": "Homenagem de entidade representativa por atuação em direitos humanos é notícia altamente positiva.",
-          "temas": [
-            "Direitos Humanos",
-            "OAB",
-            "Homenagem",
-            "Reconhecimento"
-          ]
+          "publicado_em": "2026-05-22T11:05:35.082363+00:00",
+          "resumo": "A OAB seccional Goiás entregou medalha de mérito a Iara Netto Vilela por sua contribuição aos direitos humanos."
         }
       ]
     }

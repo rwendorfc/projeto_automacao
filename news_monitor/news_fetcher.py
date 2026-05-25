@@ -6,7 +6,7 @@ import re
 import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from email.utils import parsedate_to_datetime
 
 import requests
@@ -38,12 +38,7 @@ class Noticia:
     fonte: str
     publicado_em: datetime
     resumo: str = ""
-    conteudo: str = ""
     pessoa: str = ""
-    sentimento: str = ""
-    score_sentimento: float = 0.0
-    justificativa: str = ""
-    temas: list = field(default_factory=list)
 
 
 # ──────────────────────────────────────────────
@@ -160,28 +155,6 @@ def _parse_newsapi_date(date_str: str) -> datetime:
         return datetime.now(tz=timezone.utc)
 
 
-def _extrair_conteudo(url: str) -> str:
-    """Tenta extrair o texto principal de uma URL de notícia."""
-    resp = _get(url, allow_redirects=True)
-    if not resp:
-        return ""
-
-    soup = BeautifulSoup(resp.text, "lxml")
-    for tag in soup(["script", "style", "nav", "footer", "header", "aside", "form"]):
-        tag.decompose()
-
-    for seletor in ["article", '[class*="content"]', '[class*="article"]', "main"]:
-        elem = soup.select_one(seletor)
-        if elem:
-            texto = elem.get_text(separator=" ", strip=True)
-            if len(texto) > 200:
-                return texto[:3000]
-
-    paragrafos = soup.find_all("p")
-    texto = " ".join(p.get_text(strip=True) for p in paragrafos if len(p.get_text(strip=True)) > 50)
-    return texto[:3000]
-
-
 # ──────────────────────────────────────────────
 # Busca principal
 # ──────────────────────────────────────────────
@@ -232,12 +205,5 @@ def buscar_noticias(pessoa: dict) -> list[Noticia]:
         time.sleep(DELAY_ENTRE_REQUISICOES)
 
     lista = list(noticias.values())[:MAX_NOTICIAS_POR_PESSOA]
-
-    # Enriquece com conteúdo completo (primeiras 5)
-    for i, noticia in enumerate(lista[:5]):
-        logger.info(f"Extraindo conteúdo ({i+1}/5): {noticia.titulo[:55]}...")
-        noticia.conteudo = _extrair_conteudo(noticia.url)
-        time.sleep(DELAY_ENTRE_REQUISICOES)
-
     logger.info(f"Notícias para {pessoa['nome']}: {len(lista)}")
     return lista

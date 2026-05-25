@@ -26,7 +26,7 @@ import schedule
 # Garante que o diretório do módulo está no path
 sys.path.insert(0, str(Path(__file__).parent))
 
-from config import INTERVALO_HORAS, HORARIOS_FIXOS, OUTPUT_DIR, ANTHROPIC_API_KEY
+from config import INTERVALO_HORAS, HORARIOS_FIXOS, OUTPUT_DIR
 
 LOG_DIR = Path(__file__).parent / "logs"
 LOG_DIR.mkdir(exist_ok=True)
@@ -102,12 +102,7 @@ def executar_monitoramento() -> None:
         from config import PESSOAS_MONITORADAS
 
         saida = _output_dir_para_execucao()
-        analisar = bool(ANTHROPIC_API_KEY)
-
-        if not analisar:
-            logger.warning("ANTHROPIC_API_KEY não definida — executando sem análise de sentimento.")
-
-        resultados = executar(PESSOAS_MONITORADAS, analisar=analisar)
+        resultados = executar(PESSOAS_MONITORADAS)
 
         caminho_html = gerar_html(resultados, saida)
         caminho_json = gerar_json(resultados, saida)
