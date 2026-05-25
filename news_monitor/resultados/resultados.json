@@ -1,185 +1,183 @@
 {
-  "gerado_em": "2026-05-25T12:01:58.441673+00:00",
+  "gerado_em": "2026-05-25T14:17:07.590053+00:00",
   "dados": [
     {
       "pessoa": "Gracinha Caiado",
       "cargo": "Primeira-dama de Goiás",
-      "total_noticias": 3,
+      "total_noticias": 5,
       "noticias": [
         {
-          "titulo": "Gracinha Caiado lança programa de capacitação profissional para mulheres em Goiás",
-          "url": "https://exemplo.com/gracinha-mulheres",
-          "fonte": "Globo Goiás",
-          "publicado_em": "2026-05-25T12:01:58.438845+00:00",
-          "resumo": "A primeira-dama Gracinha Caiado lançou o programa 'Goiás Mulher' voltado à qualificação profissional de 10 mil mulheres vulneráveis."
+          "titulo": "Gracinha Caiado lidera intenções de voto para o Senado em Goiás",
+          "url": "https://www.poder360.com.br/poder-eleicoes/gracinha-caiado-lidera-intencoes-de-voto-para-o-senado-em-goias/",
+          "fonte": "Poder360",
+          "publicado_em": "2026-05-07T00:00:00+00:00",
+          "resumo": "Gracinha Caiado, filiada ao União Brasil, lidera as intenções de voto para o Senado em Goiás com 39,1%, de acordo com pesquisa Paraná Pesquisas divulgada em abril de 2026. Ela é a principal nome da base governista para a disputa."
         },
         {
-          "titulo": "Primeira-dama visita entidades sociais no interior goiano",
-          "url": "https://exemplo.com/gracinha-visita",
-          "fonte": "O Popular",
-          "publicado_em": "2026-05-23T12:01:58.438845+00:00",
-          "resumo": "Gracinha Caiado percorreu municípios do interior em ação de doação de cestas básicas e acompanhamento de projetos sociais."
+          "titulo": "Paraná Pesquisas: Gracinha Caiado lidera corrida ao Senado com 36,9% em GO",
+          "url": "https://exame.com/brasil/parana-pesquisas-gracinha-caiado-lidera-corrida-ao-senado-com-369-em-go/",
+          "fonte": "Exame / Paraná Pesquisas",
+          "publicado_em": "2026-04-07T00:00:00+00:00",
+          "resumo": "Levantamento do instituto Paraná Pesquisas aponta Gracinha Caiado com 36,9% das intenções de voto para o Senado Federal por Goiás, consolidando sua liderança na disputa para outubro de 2026."
         },
         {
-          "titulo": "Gracinha Caiado representa Goiás em evento sobre saúde da mulher em Brasília",
-          "url": "https://exemplo.com/gracinha-brasilia",
-          "fonte": "Correio Braziliense",
-          "publicado_em": "2026-05-21T12:01:58.438845+00:00",
-          "resumo": "A primeira-dama participou do Fórum Nacional de Saúde da Mulher e apresentou iniciativas goianas."
+          "titulo": "Gracinha Caiado defende aliança com o PL e chapa única ao Senado em 2026",
+          "url": "https://www.podergoias.com.br/materia/22391/gracinha-caiado-defende-alianca-com-o-pl-e-chapa-unica-ao-senado-em-2026",
+          "fonte": "Poder Goiás",
+          "publicado_em": "2026-05-10T00:00:00+00:00",
+          "resumo": "Em maio de 2026, Gracinha Caiado defendeu publicamente a aliança entre a base do governador Ronaldo Caiado e o Partido Liberal (PL) para as eleições. Ela defende a formação de uma chapa única com dois candidatos ao Senado."
+        },
+        {
+          "titulo": "Gracinha Caiado abre edição 2026 do Goiás Social Mulher em Goiânia",
+          "url": "https://tv10.com.br/cidades/goias/gracinha-caiado-abre-edicao-2026-do-goias-social-mulher-em-goiania/",
+          "fonte": "TV10",
+          "publicado_em": "2026-03-05T00:00:00+00:00",
+          "resumo": "A ex-primeira-dama Gracinha Caiado abriu a edição 2026 do programa Goiás Social Mulher na Praça Cívica, centro de Goiânia, oferecendo serviços gratuitos de saúde, assistência social e emissão de documentos à população durante cinco dias."
+        },
+        {
+          "titulo": "Gracinha Caiado faz visita institucional ao TCMGO",
+          "url": "https://www.tcmgo.tc.br/site/2026/03/gracinha-caiado-faz-visita-institucional-ao-tcmgo/",
+          "fonte": "Tribunal de Contas dos Municípios de Goiás",
+          "publicado_em": "2026-03-20T00:00:00+00:00",
+          "resumo": "Gracinha Caiado realizou visita institucional ao Tribunal de Contas dos Municípios do Estado de Goiás (TCMGO) em março de 2026, reforçando sua agenda política e institucional no estado."
         }
       ]
     },
     {
       "pessoa": "Ronaldo Caiado",
       "cargo": "Governador de Goiás",
-      "total_noticias": 5,
+      "total_noticias": 3,
       "noticias": [
         {
-          "titulo": "Caiado anuncia R$ 500 milhões em investimentos para infraestrutura de Goiás",
-          "url": "https://exemplo.com/caiado-investimentos",
-          "fonte": "Jornal O Popular",
-          "publicado_em": "2026-05-25T12:01:58.438845+00:00",
-          "resumo": "O governador Ronaldo Caiado assinou pacote de investimentos em rodovias e saneamento para 50 municípios goianos."
+          "titulo": "Caiado volta a Minas para agenda com agro pela terceira vez em menos de um mês",
+          "url": "https://www.otempo.com.br/eleicoes/2026/presidentes/2026/5/21/caiado-volta-a-minas-para-agenda-com-agro-pela-terceira-vez-em-menos-de-um-mes",
+          "fonte": "O Tempo",
+          "publicado_em": "2026-05-21T00:00:00+00:00",
+          "resumo": "Pré-candidato à presidência pelo PSD, Ronaldo Caiado realizou sua terceira agenda no agronegócio de Minas Gerais em menos de um mês. A estratégia faz parte de um plano para conquistar votos do centro e se distanciar da polarização bolsonarista."
         },
         {
-          "titulo": "Caiado defende reforma tributária e critica impacto nos estados",
-          "url": "https://exemplo.com/caiado-reforma",
-          "fonte": "Folha de Goiás",
-          "publicado_em": "2026-05-24T12:01:58.438845+00:00",
-          "resumo": "Em encontro com governadores, Caiado afirmou que a reforma tributária prejudica os estados produtores do agronegócio."
+          "titulo": "Quem é Ronaldo Caiado, aposta do PSD para o Planalto em 2026",
+          "url": "https://www.congressoemfoco.com.br/noticia/117684/quem-e-ronaldo-caiado-aposta-do-psd-para-o-planalto-em-2026",
+          "fonte": "Congresso em Foco",
+          "publicado_em": "2026-03-30T00:00:00+00:00",
+          "resumo": "O PSD confirmou Ronaldo Caiado como candidato à presidência da República em 30 de março de 2026, após sua filiação ao partido em janeiro. Caiado é herdeiro de uma dinastia política goiana e liderança do setor rural, com avaliação positiva da gestão do estado."
         },
         {
-          "titulo": "Índice de aprovação do governo Caiado chega a 68%, aponta pesquisa",
-          "url": "https://exemplo.com/aprovacao-caiado",
-          "fonte": "Datafolha Regional",
-          "publicado_em": "2026-05-23T12:01:58.438845+00:00",
-          "resumo": "Pesquisa de opinião aponta que 68% dos goianos aprovam a gestão do governador Ronaldo Caiado."
-        },
-        {
-          "titulo": "TCE aponta irregularidades em contratos da Secretaria de Saúde de Goiás",
-          "url": "https://exemplo.com/tce-saude",
-          "fonte": "Metrópoles Goiás",
-          "publicado_em": "2026-05-22T12:01:58.438845+00:00",
-          "resumo": "Tribunal de Contas do Estado identificou sobrepreço em licitações de medicamentos na gestão estadual."
-        },
-        {
-          "titulo": "Governador inaugura hospital regional em Anápolis",
-          "url": "https://exemplo.com/hospital-anapolis",
-          "fonte": "Agência Goiás",
-          "publicado_em": "2026-05-21T12:01:58.438845+00:00",
-          "resumo": "Caiado participou da inauguração do Hospital Regional de Anápolis, unidade com 200 leitos."
+          "titulo": "Eleições 2026: quem é Ronaldo Caiado, pré-candidato à presidência?",
+          "url": "https://exame.com/brasil/eleicoes-2026-quem-e-ronaldo-caiado-pre-candidato-a-presidencia/",
+          "fonte": "Exame",
+          "publicado_em": "2026-04-10T00:00:00+00:00",
+          "resumo": "Perfil do governador licenciado de Goiás que disputará a presidência em 2026. O governo estadual aponta quedas superiores a 90% em alguns tipos de roubo e acima de 60% em homicídios entre 2018 e o primeiro semestre de 2025."
         }
       ]
     },
     {
       "pessoa": "Adryanna Caiado",
       "cargo": "Família Caiado",
-      "total_noticias": 2,
+      "total_noticias": 3,
       "noticias": [
         {
-          "titulo": "Adryanna Caiado participa de ação de preservação ambiental no Cerrado",
-          "url": "https://exemplo.com/adryanna-cerrado",
-          "fonte": "Greenpeace Brasil / Agência Goiás",
-          "publicado_em": "2026-05-24T12:01:58.438845+00:00",
-          "resumo": "Filha do governador participou de mutirão de reflorestamento no Parque Estadual da Serra de Jaraguá."
+          "titulo": "OVG divulga resultado final do ProBem 2026/1 com cinco mil beneficiários",
+          "url": "https://aredacao.com.br/ovg-divulga-resultado-final-do-probem-2026-1-com-cinco-mil-beneficiarios-selecionados/",
+          "fonte": "A Redação / OVG",
+          "publicado_em": "2026-02-10T00:00:00+00:00",
+          "resumo": "A Organização das Voluntárias de Goiás (OVG), sob direção-geral de Adryanna Caiado, divulgou o resultado final do ProBem 2026/1: 5 mil estudantes selecionados, sendo 1.250 bolsas integrais e 3.750 parciais. A diretora destacou que o índice IMCF-A garante justiça e transparência no processo."
         },
         {
-          "titulo": "Adryanna Caiado defende ampliação de políticas de saúde mental em evento nacional",
-          "url": "https://exemplo.com/adryanna-saude-mental",
-          "fonte": "Veja Saúde",
-          "publicado_em": "2026-05-22T12:01:58.438845+00:00",
-          "resumo": "Em palestra em São Paulo, Adryanna Caiado falou sobre a importância de políticas públicas de saúde mental para jovens."
+          "titulo": "ProBem 2026/1: 5 mil novos bolsistas universitários em Goiás",
+          "url": "https://agenciacoradenoticias.go.gov.br/182715-governo-divulga-resultado-final-do-probem-2026-1-com-cinco-mil-beneficiarios-selecionados",
+          "fonte": "Agência Cora de Notícias / Governo de Goiás",
+          "publicado_em": "2026-02-10T00:00:00+00:00",
+          "resumo": "O Governo de Goiás, por meio do Goiás Social e OVG, liberou a lista final de bolsistas do ProBem 2026/1. As bolsas integrais cobrem até R$ 1.500 para cursos gerais e R$ 5.800 para Medicina. Adryanna Caiado, diretora-geral da OVG, ressaltou que jovens têm talento e o Estado deve garantir os meios de desenvolvê-lo."
+        },
+        {
+          "titulo": "Caiado deixa Governo de Goiás com ao menos 10 parentes em cargos",
+          "url": "https://www.poder360.com.br/poder-eleicoes/caiado-deixa-governo-de-goias-com-ao-menos-10-parentes-em-cargos/",
+          "fonte": "Poder360",
+          "publicado_em": "2026-03-28T00:00:00+00:00",
+          "resumo": "Levantamento aponta que ao menos 10 parentes de Ronaldo Caiado ocupavam cargos no governo goiano quando o ex-governador deixou o estado para disputar a presidência. Adryanna Leonor Melo de Oliveira Caiado, casada com primo de Caiado, acumula cargos na OVG, Goiás Parcerias e Saneago."
         }
       ]
     },
     {
       "pessoa": "Roberta Wendorf Carvalho",
       "cargo": "Personalidade pública",
-      "total_noticias": 2,
-      "noticias": [
-        {
-          "titulo": "Roberta Wendorf Carvalho é empossada no Conselho Estadual de Cultura de Goiás",
-          "url": "https://exemplo.com/roberta-conselho-cultura",
-          "fonte": "Agência Goiás",
-          "publicado_em": "2026-05-24T12:01:58.438845+00:00",
-          "resumo": "Cerimônia de posse marcou a entrada de Roberta Wendorf Carvalho como conselheira do colegiado cultural goiano."
-        },
-        {
-          "titulo": "Investimento em cultura: Goiás destina R$ 8 milhões para festivais regionais",
-          "url": "https://exemplo.com/cultura-festivais",
-          "fonte": "Folha de Goiás",
-          "publicado_em": "2026-05-22T12:01:58.438845+00:00",
-          "resumo": "Com participação ativa do conselho estadual, Goiás anuncia edital para apoio a festivais de cultura popular."
-        }
-      ]
+      "total_noticias": 0,
+      "noticias": []
     },
     {
       "pessoa": "Decio Wendorf",
       "cargo": "Personalidade pública",
-      "total_noticias": 1,
-      "noticias": [
-        {
-          "titulo": "Décio Wendorf participa de reunião do setor empresarial em Goiânia",
-          "url": "https://exemplo.com/decio-empresarial",
-          "fonte": "Diário do Comércio Goiás",
-          "publicado_em": "2026-05-23T12:01:58.438845+00:00",
-          "resumo": "Encontro reuniu líderes do setor produtivo para discutir o cenário econômico de Goiás no segundo semestre."
-        }
-      ]
+      "total_noticias": 0,
+      "noticias": []
     },
     {
       "pessoa": "Daniel Vilela",
       "cargo": "Político de Goiás",
-      "total_noticias": 4,
+      "total_noticias": 3,
       "noticias": [
         {
-          "titulo": "Daniel Vilela fortalece candidatura ao governo de Goiás com apoios regionais",
-          "url": "https://exemplo.com/daniel-vilela-candidatura",
-          "fonte": "O Popular",
-          "publicado_em": "2026-05-25T12:01:58.438845+00:00",
-          "resumo": "O presidente do MDB goiano articula apoios de prefeitos e lideranças do interior para a disputa eleitoral de 2026."
+          "titulo": "Daniel Vilela toma posse como governador de Goiás",
+          "url": "https://goias.gov.br/abc/daniel-vilela-toma-posse-como-governador-de-goias/",
+          "fonte": "Agência Brasil Central / Portal Goiás",
+          "publicado_em": "2026-03-31T00:00:00+00:00",
+          "resumo": "Daniel Vilela foi empossado governador de Goiás em 31 de março de 2026 na Assembleia Legislativa em Goiânia, após a renúncia de Ronaldo Caiado para concorrer à presidência. Vilela ressaltou estabilidade institucional, foco em resultados e preservação do modelo de gestão que reposicionou Goiás no cenário nacional."
         },
         {
-          "titulo": "Vilela critica política de segurança pública do estado e propõe alternativas",
-          "url": "https://exemplo.com/vilela-seguranca",
-          "fonte": "Metrópoles Goiás",
-          "publicado_em": "2026-05-24T12:01:58.438845+00:00",
-          "resumo": "Daniel Vilela apresentou proposta de reestruturação da segurança pública para Goiás em evento do MDB."
+          "titulo": "Revista Veja aponta Daniel Vilela como 'exceção' entre aliados de governadores para 2026",
+          "url": "https://www.jornalopcao.com.br/ultimas-noticias/revista-veja-aponta-daniel-vilela-como-excecao-entre-aliados-de-governadores-para-2026-829253/",
+          "fonte": "Jornal Opção / Veja",
+          "publicado_em": "2026-04-15T00:00:00+00:00",
+          "resumo": "A Revista Veja destacou Daniel Vilela como caso raro entre os aliados de governadores que disputarão eleições em 2026, indicando posicionamento político diferenciado do novo governador de Goiás no cenário nacional."
         },
         {
-          "titulo": "MDB goiano realiza convenção e confirma Daniel Vilela como pré-candidato",
-          "url": "https://exemplo.com/mdb-convencao",
-          "fonte": "Globo Goiás",
-          "publicado_em": "2026-05-23T12:01:58.438845+00:00",
-          "resumo": "Convenção regional do MDB formalizou a pré-candidatura de Daniel Vilela ao governo do estado."
-        },
-        {
-          "titulo": "Ficha limpa: Daniel Vilela enfrenta questionamentos sobre financiamento de campanha anterior",
-          "url": "https://exemplo.com/vilela-campanha-anterior",
-          "fonte": "Poder360",
-          "publicado_em": "2026-05-21T12:01:58.438845+00:00",
-          "resumo": "Documentos revelam questionamentos do TSE sobre prestação de contas de campanha passada."
+          "titulo": "Daniel Vilela reforça apoio ao agro em evento no Vale do Araguaia",
+          "url": "https://transmissaopolitica.com.br/politica-goiana/2026/05/06/daniel-vilela-apoio-agro-vale-do-araguaia/",
+          "fonte": "Transmissão Política",
+          "publicado_em": "2026-05-06T00:00:00+00:00",
+          "resumo": "O governador Daniel Vilela participou em 6 de maio da 2ª edição da Conforto Experience, em Nova Crixás, no Vale do Araguaia. Ele defendeu o diálogo direto com o setor produtivo e afirmou que o Governo de Goiás tem ouvido as demandas dos produtores para orientar novas políticas públicas."
         }
       ]
     },
     {
       "pessoa": "Iara Netto Vilela",
       "cargo": "Personalidade pública",
-      "total_noticias": 2,
+      "total_noticias": 5,
       "noticias": [
         {
-          "titulo": "Iara Netto Vilela lidera projeto de alfabetização em comunidades rurais de Goiás",
-          "url": "https://exemplo.com/iara-alfabetizacao",
-          "fonte": "Agência Goiás",
-          "publicado_em": "2026-05-24T12:01:58.438845+00:00",
-          "resumo": "O projeto coordenado por Iara Netto Vilela já beneficiou mais de 2 mil adultos em zonas rurais do estado."
+          "titulo": "Iara Netto Vilela assume o Gabinete de Políticas Sociais em Goiás",
+          "url": "https://www.revistastile.com.br/iara-netto-vilela-assume-o-gabinete-de-politicas-sociais-em-goias/",
+          "fonte": "Revista Stile",
+          "publicado_em": "2026-04-02T00:00:00+00:00",
+          "resumo": "Iara Netto Vilela, primeira-dama de Goiás, assumiu o comando do Gabinete de Políticas Sociais (GPS) do estado. Formada em Administração pela PUC-GO e ex-empresária do setor calçadista, ela também preside honorariamente a OVG."
         },
         {
-          "titulo": "Iara Vilela é homenageada pela OAB-GO por atuação em direitos humanos",
-          "url": "https://exemplo.com/iara-oab-homenagem",
-          "fonte": "OAB Goiás / Jornal Jurídico",
-          "publicado_em": "2026-05-22T12:01:58.438845+00:00",
-          "resumo": "A OAB seccional Goiás entregou medalha de mérito a Iara Netto Vilela por sua contribuição aos direitos humanos."
+          "titulo": "Daniel e Iara Vilela lançam Goiás Social em Formosa com 1,5 mil cartões e serviços",
+          "url": "https://www.diariogoianiense.com.br/noticia/daniel-e-iara-vilela-lancam-goias-social-em-formosa-com-1-5-mil-cartoes-e-servicos",
+          "fonte": "Diário Goianiense",
+          "publicado_em": "2026-05-19T00:00:00+00:00",
+          "resumo": "O governador Daniel Vilela e a primeira-dama Iara Netto Vilela inauguraram etapa do Goiás Social em Formosa em 19 de maio de 2026, distribuindo serviços gratuitos de saúde, assistência social e documentação, com previsão de mais de 1.500 cartões para famílias em vulnerabilidade."
+        },
+        {
+          "titulo": "PF prende sogra do governador de Goiás em operação contra migração ilegal",
+          "url": "https://www.cartacapital.com.br/politica/pf-prende-a-sogra-do-governador-de-goias-em-operacao-contra-migracao-ilegal/",
+          "fonte": "CartaCapital",
+          "publicado_em": "2026-05-07T00:00:00+00:00",
+          "resumo": "A Polícia Federal prendeu Maria Helena de Souza Costa, mãe de Iara Netto Vilela e sogra do governador Daniel Vilela, na Operação Travessia em 7 de maio de 2026. Ela é suspeita de chefiar um dos grupos investigados pelo tráfico ilegal de pessoas, que movimentou R$ 240 milhões entre 2018 e 2023. A PF informou que Daniel Vilela e Iara Netto Vilela não são alvos da investigação."
+        },
+        {
+          "titulo": "Goiás Social abre mais de mil vagas para cursos gratuitos de robótica em 21 cidades",
+          "url": "https://www.jornalestadodegoias.com.br/2026/05/24/robotica-e-tecnologia-goias-social-abre-mais-de-mil-vagas-para-cursos-gratuitos-em-21-cidades/",
+          "fonte": "Jornal Estado de Goiás",
+          "publicado_em": "2026-05-24T00:00:00+00:00",
+          "resumo": "O programa Goiás Social, coordenado por Iara Netto Vilela, abriu mais de mil vagas para cursos gratuitos de robótica e tecnologia em 21 cidades do estado, ampliando o acesso de jovens vulneráveis a áreas estratégicas para o futuro profissional."
+        },
+        {
+          "titulo": "'Seguiremos ampliando o cuidado social em Goiás', destaca Iara Netto Vilela",
+          "url": "https://sdnews.com.br/noticia/15476/seguiremos-ampliando-o-cuidado-social-e-fortalecendo-oportunidades-em-goias-destaca-iara-netto-vile.html",
+          "fonte": "Serra Dourada News",
+          "publicado_em": "2026-04-20T00:00:00+00:00",
+          "resumo": "Iara Netto Vilela destacou o compromisso do Governo de Goiás em ampliar o cuidado social e fortalecer oportunidades para a população em situação de vulnerabilidade, com foco em programas de inclusão e geração de renda."
         }
       ]
     }
