@@ -6,8 +6,8 @@ Sistema automatizado de monitoramento de notícias para personalidades públicas
 
 | Nome | Cargo |
 |------|-------|
-| Gracinha Caiado | Primeira-dama de Goiás |
-| Ronaldo Caiado | Governador de Goiás |
+| Gracinha Caiado | Ex-Primeira-dama de Goiás |
+| Ronaldo Caiado | Ex-Governador de Goiás |
 | Adryanna Caiado | Família Caiado |
 | Roberta Wendorf Carvalho | Personalidade pública |
 | Decio Wendorf | Personalidade pública |
