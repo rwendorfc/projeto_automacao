@@ -59,6 +59,11 @@ INTERVALO_HORAS = 4
 # Exemplo: ["06:00", "10:00", "14:00", "18:00", "22:00"]
 HORARIOS_FIXOS: list[str] = []
 
-# Chaves de API (configure via variáveis de ambiente ou diretamente aqui)
+# Chaves de API (configure via variáveis de ambiente ou arquivo .env)
 import os
 NEWSAPI_KEY = os.environ.get("NEWSAPI_KEY", "")  # https://newsapi.org (plano gratuito disponível)
+
+# WhatsApp — CallMeBot (gratuito): https://www.callmebot.com/blog/free-api-whatsapp-messages/
+# Ativação: salve +34 644 59 67 47 como "CallMeBot" e envie "I allow callmebot to send me messages"
+WHATSAPP_PHONE = os.environ.get("WHATSAPP_PHONE", "")      # ex: +5571996697450
+CALLMEBOT_API_KEY = os.environ.get("CALLMEBOT_API_KEY", "") # chave enviada pelo CallMeBot após ativação

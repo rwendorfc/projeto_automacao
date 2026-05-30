@@ -84,6 +84,8 @@ def main():
     )
     parser.add_argument("--demo", action="store_true",
                         help="Modo demonstração com dados mockados (não requer rede)")
+    parser.add_argument("--whatsapp", action="store_true",
+                        help="Envia resumo via WhatsApp ao finalizar")
     parser.add_argument("--pessoa", type=str, default=None,
                         help="Nome exato de uma pessoa para monitorar individualmente")
     parser.add_argument("--saida", type=str, default=OUTPUT_DIR,
@@ -109,6 +111,16 @@ def main():
 
     print(f"\nRelatório HTML → {caminho_html}")
     print(f"Dados JSON     → {caminho_json}")
+
+    if args.whatsapp:
+        from whatsapp_notifier import enviar, montar_resumo
+        from datetime import datetime
+        mensagem = montar_resumo(resultados, datetime.now().strftime("%d/%m/%Y %H:%M"))
+        ok = enviar(mensagem)
+        if ok:
+            print("WhatsApp enviado com sucesso.")
+        else:
+            print("Falha ao enviar WhatsApp — verifique WHATSAPP_PHONE e CALLMEBOT_API_KEY.")
 
 
 if __name__ == "__main__":
