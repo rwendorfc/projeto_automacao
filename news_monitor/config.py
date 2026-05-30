@@ -64,6 +64,9 @@ import os
 NEWSAPI_KEY = os.environ.get("NEWSAPI_KEY", "")  # https://newsapi.org (plano gratuito disponível)
 
 # WhatsApp — CallMeBot (gratuito): https://www.callmebot.com/blog/free-api-whatsapp-messages/
-# Ativação: salve +34 644 59 67 47 como "CallMeBot" e envie "I allow callmebot to send me messages"
-WHATSAPP_PHONE = os.environ.get("WHATSAPP_PHONE", "")      # ex: +5571996697450
-CALLMEBOT_API_KEY = os.environ.get("CALLMEBOT_API_KEY", "") # chave enviada pelo CallMeBot após ativação
+WHATSAPP_PHONE = os.environ.get("WHATSAPP_PHONE", "")
+CALLMEBOT_API_KEY = os.environ.get("CALLMEBOT_API_KEY", "")
+
+# Telegram Bot (gratuito): crie um bot com @BotFather no Telegram
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")  # ex: 123456789:AAF...
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")       # ex: 987654321

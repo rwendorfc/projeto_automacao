@@ -86,6 +86,8 @@ def main():
                         help="Modo demonstração com dados mockados (não requer rede)")
     parser.add_argument("--whatsapp", action="store_true",
                         help="Envia resumo via WhatsApp ao finalizar")
+    parser.add_argument("--telegram", action="store_true",
+                        help="Envia resumo via Telegram ao finalizar")
     parser.add_argument("--pessoa", type=str, default=None,
                         help="Nome exato de uma pessoa para monitorar individualmente")
     parser.add_argument("--saida", type=str, default=OUTPUT_DIR,
@@ -112,15 +114,18 @@ def main():
     print(f"\nRelatório HTML → {caminho_html}")
     print(f"Dados JSON     → {caminho_json}")
 
+    from datetime import datetime
+    data_str = datetime.now().strftime("%d/%m/%Y %H:%M")
+
+    if args.telegram:
+        from telegram_notifier import enviar as tg_enviar, montar_resumo as tg_resumo
+        ok = tg_enviar(tg_resumo(resultados, data_str))
+        print("Telegram enviado com sucesso." if ok else "Falha ao enviar Telegram — verifique TELEGRAM_BOT_TOKEN e TELEGRAM_CHAT_ID.")
+
     if args.whatsapp:
-        from whatsapp_notifier import enviar, montar_resumo
-        from datetime import datetime
-        mensagem = montar_resumo(resultados, datetime.now().strftime("%d/%m/%Y %H:%M"))
-        ok = enviar(mensagem)
-        if ok:
-            print("WhatsApp enviado com sucesso.")
-        else:
-            print("Falha ao enviar WhatsApp — verifique WHATSAPP_PHONE e CALLMEBOT_API_KEY.")
+        from whatsapp_notifier import enviar as wa_enviar, montar_resumo as wa_resumo
+        ok = wa_enviar(wa_resumo(resultados, data_str))
+        print("WhatsApp enviado com sucesso." if ok else "Falha ao enviar WhatsApp — verifique WHATSAPP_PHONE e CALLMEBOT_API_KEY.")
 
 
 if __name__ == "__main__":

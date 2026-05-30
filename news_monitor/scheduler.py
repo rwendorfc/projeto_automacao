@@ -118,12 +118,19 @@ def executar_monitoramento() -> None:
         logger.info(f"HTML → {caminho_html}")
         logger.info(f"JSON → {caminho_json}")
 
-        # Envia resumo via WhatsApp
+        data_str = fim.strftime("%d/%m/%Y %H:%M")
+
+        # Envia resumo via Telegram
         try:
-            from whatsapp_notifier import enviar, montar_resumo
-            data_str = fim.strftime("%d/%m/%Y %H:%M")
-            mensagem = montar_resumo(resultados, data_str)
-            enviar(mensagem)
+            from telegram_notifier import enviar as tg_enviar, montar_resumo as tg_resumo
+            tg_enviar(tg_resumo(resultados, data_str))
+        except Exception as e:
+            logger.warning(f"Falha ao enviar Telegram: {e}")
+
+        # Envia resumo via WhatsApp (se configurado)
+        try:
+            from whatsapp_notifier import enviar as wa_enviar, montar_resumo as wa_resumo
+            wa_enviar(wa_resumo(resultados, data_str))
         except Exception as e:
             logger.warning(f"Falha ao enviar WhatsApp: {e}")
 
