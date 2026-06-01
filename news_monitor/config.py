@@ -59,14 +59,26 @@ INTERVALO_HORAS = 4
 # Exemplo: ["06:00", "10:00", "14:00", "18:00", "22:00"]
 HORARIOS_FIXOS: list[str] = []
 
-# Chaves de API (configure via variáveis de ambiente ou arquivo .env)
+# Chaves de API (lidas do arquivo .env ou variáveis de ambiente)
 import os
-NEWSAPI_KEY = os.environ.get("NEWSAPI_KEY", "")  # https://newsapi.org (plano gratuito disponível)
+from pathlib import Path
+
+# Carrega o .env automaticamente se existir
+_env_path = Path(__file__).parent.parent / ".env"
+if _env_path.exists():
+    with open(_env_path) as _f:
+        for _line in _f:
+            _line = _line.strip()
+            if _line and not _line.startswith("#") and "=" in _line:
+                _key, _, _val = _line.partition("=")
+                os.environ.setdefault(_key.strip(), _val.strip())
+
+NEWSAPI_KEY = os.environ.get("NEWSAPI_KEY", "")
 
 # WhatsApp — CallMeBot (gratuito): https://www.callmebot.com/blog/free-api-whatsapp-messages/
 WHATSAPP_PHONE = os.environ.get("WHATSAPP_PHONE", "")
 CALLMEBOT_API_KEY = os.environ.get("CALLMEBOT_API_KEY", "")
 
 # Telegram Bot (gratuito): crie um bot com @BotFather no Telegram
-TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")  # ex: 123456789:AAF...
-TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")       # ex: 987654321
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
