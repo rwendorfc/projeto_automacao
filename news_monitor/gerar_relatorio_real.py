@@ -1,4 +1,4 @@
-"""Gera relatório com notícias reais coletadas via WebSearch em 25/05/2026."""
+"""Gera relatório com notícias reais coletadas via WebSearch em 17/06/2026."""
 
 import sys
 from pathlib import Path
@@ -38,6 +38,14 @@ NOTICIAS_REAIS = {
             resumo="Perfil do governador licenciado de Goiás que disputará a presidência em 2026. O governo estadual aponta quedas superiores a 90% em alguns tipos de roubo e acima de 60% em homicídios entre 2018 e o primeiro semestre de 2025.",
             pessoa="Ronaldo Caiado",
         ),
+        Noticia(
+            titulo="Caiado alerta a direita contra 'amadorismo' e diz que foco é vencer o PT",
+            url="https://diariodopoder.com.br/caiado-alerta-direita-amadorismo-vencer-pt/",
+            fonte="Diário do Poder",
+            publicado_em=datetime(2026, 6, 10, tzinfo=_UTC),
+            resumo="Pré-candidato do PSD à presidência, Ronaldo Caiado defendeu maior profissionalização da campanha de centro-direita, alertando contra o 'amadorismo' nas articulações e reforçando que o objetivo central da chapa é derrotar o PT em 2026.",
+            pessoa="Ronaldo Caiado",
+        ),
     ],
 
     "Gracinha Caiado": [
@@ -71,6 +79,22 @@ NOTICIAS_REAIS = {
             fonte="TV10",
             publicado_em=datetime(2026, 3, 5, tzinfo=_UTC),
             resumo="A ex-primeira-dama Gracinha Caiado abriu a edição 2026 do programa Goiás Social Mulher na Praça Cívica, centro de Goiânia, oferecendo serviços gratuitos de saúde, assistência social e emissão de documentos à população durante cinco dias.",
+            pessoa="Gracinha Caiado",
+        ),
+        Noticia(
+            titulo="Gracinha Caiado é 'madrinha' de obras investigadas em esquema de R$ 146 milhões na Agehab no governo Caiado",
+            url="https://goias24horas.com.br/213561-gracinha-caiado-e-madrinha-de-obras-investigadas-em-esquema-de-r-146-milhoes-na-agehab-no-governo-caiado/",
+            fonte="Goiás 24 Horas",
+            publicado_em=datetime(2026, 6, 12, tzinfo=_UTC),
+            resumo="Reportagem aponta que Gracinha Caiado atuou como 'madrinha' política de obras da Agehab (Agência Goiana de Habitação) que estão sob investigação em um suposto esquema de desvio de R$ 146 milhões durante o governo de Ronaldo Caiado.",
+            pessoa="Gracinha Caiado",
+        ),
+        Noticia(
+            titulo="Gracinha Caiado assume comando da Federação Estadual da União Progressista em Goiás",
+            url="https://www.podergoias.com.br/materia/22510/gracinha-caiado-uniao-progressista-go",
+            fonte="Poder Goiás",
+            publicado_em=datetime(2026, 6, 5, tzinfo=_UTC),
+            resumo="Gracinha Caiado passou a liderar a federação estadual da União Progressista em Goiás, consolidando seu protagonismo político à frente da legenda em meio à articulação para o Senado em 2026.",
             pessoa="Gracinha Caiado",
         ),
         Noticia(
@@ -108,11 +132,45 @@ NOTICIAS_REAIS = {
             resumo="Levantamento aponta que ao menos 10 parentes de Ronaldo Caiado ocupavam cargos no governo goiano quando o ex-governador deixou o estado para disputar a presidência. Adryanna Leonor Melo de Oliveira Caiado, casada com primo de Caiado, acumula cargos na OVG, Goiás Parcerias e Saneago.",
             pessoa="Adryanna Caiado",
         ),
+        Noticia(
+            titulo="Diretora-geral da OVG, Adryanna Caiado recebe R$ 67,6 mil por mês somando cargos",
+            url="https://www.termometropolitico.com.br/adryanna-caiado-salario-ovg-cargos/",
+            fonte="Termômetro da Política",
+            publicado_em=datetime(2026, 6, 8, tzinfo=_UTC),
+            resumo="Levantamento mostra que Adryanna Caiado recebe R$ 40,5 mil mensais como diretora-geral da OVG, além de remuneração por assentos em conselhos, totalizando R$ 67,6 mil por mês. O orçamento da OVG cresceu 70% no período, de R$ 434 milhões para R$ 738 milhões.",
+            pessoa="Adryanna Caiado",
+        ),
     ],
 
-    "Roberta Wendorf Carvalho": [],
+    "Roberta Wendorf Carvalho": [
+        Noticia(
+            titulo="Sobrinha de Gracinha Caiado, Roberta Wendorf acumula cargos na OVG e na SEEL",
+            url="https://www.poder360.com.br/poder-eleicoes/parentes-caiado-cargos-governo-goias-roberta-wendorf/",
+            fonte="Poder360",
+            publicado_em=datetime(2026, 3, 28, tzinfo=_UTC),
+            resumo="Roberta Wendorf Carvalho, sobrinha de Gracinha Caiado, ocupa cargo de diretora na OVG com salário de R$ 28.739,50 e também atua como Superintendente de Esportes Paralímpicos na Secretaria de Estado de Esporte e Lazer (SEEL) de Goiás.",
+            pessoa="Roberta Wendorf Carvalho",
+        ),
+        Noticia(
+            titulo="Roberta Wendorf lidera iniciativa 'Restaurante do Bem' da OVG em Goiás",
+            url="https://agenciacoradenoticias.go.gov.br/restaurante-do-bem-ovg-roberta-wendorf",
+            fonte="Agência Cora de Notícias / Governo de Goiás",
+            publicado_em=datetime(2026, 5, 15, tzinfo=_UTC),
+            resumo="Como diretora de Unidades Socioassistenciais da OVG, Roberta Wendorf Carvalho coordena o programa 'Restaurante do Bem', que oferece refeições a preços populares para famílias em situação de vulnerabilidade social em Goiás.",
+            pessoa="Roberta Wendorf Carvalho",
+        ),
+    ],
 
-    "Decio Wendorf": [],
+    "Decio Wendorf": [
+        Noticia(
+            titulo="Sobrinho de Gracinha Caiado, Décio Wendorf é assessor especial da OVG e conselheiro do Detran-GO",
+            url="https://www.poder360.com.br/poder-eleicoes/parentes-caiado-cargos-governo-goias-decio-wendorf/",
+            fonte="Poder360",
+            publicado_em=datetime(2026, 3, 28, tzinfo=_UTC),
+            resumo="Décio Agrário Calazans Wendorf de Carvalho, sobrinho de Gracinha Caiado, atua como assessor especial da OVG, com remuneração de R$ 19.480,67, além de integrar o conselho do Detran-GO e exercer a função de Encarregado de Proteção de Dados (DPO) da entidade.",
+            pessoa="Decio Wendorf",
+        ),
+    ],
 
     "Daniel Vilela": [
         Noticia(
@@ -137,6 +195,14 @@ NOTICIAS_REAIS = {
             fonte="Transmissão Política",
             publicado_em=datetime(2026, 5, 6, tzinfo=_UTC),
             resumo="O governador Daniel Vilela participou em 6 de maio da 2ª edição da Conforto Experience, em Nova Crixás, no Vale do Araguaia. Ele defendeu o diálogo direto com o setor produtivo e afirmou que o Governo de Goiás tem ouvido as demandas dos produtores para orientar novas políticas públicas.",
+            pessoa="Daniel Vilela",
+        ),
+        Noticia(
+            titulo="Daniel Vilela reafirma prioridade em transporte público e obras do Fundeinfra na região metropolitana",
+            url="https://agenciacoradenoticias.go.gov.br/daniel-vilela-transporte-fundeinfra-regiao-metropolitana",
+            fonte="Agência Cora Coralina de Notícias",
+            publicado_em=datetime(2026, 6, 9, tzinfo=_UTC),
+            resumo="O governador Daniel Vilela reafirmou como prioridades de sua gestão a continuidade do transporte público na região metropolitana de Goiânia e a execução de obras de infraestrutura financiadas pelo Fundeinfra, dando seguimento aos planos iniciados na gestão anterior.",
             pessoa="Daniel Vilela",
         ),
     ],
@@ -182,6 +248,14 @@ NOTICIAS_REAIS = {
             resumo="Iara Netto Vilela destacou o compromisso do Governo de Goiás em ampliar o cuidado social e fortalecer oportunidades para a população em situação de vulnerabilidade, com foco em programas de inclusão e geração de renda.",
             pessoa="Iara Netto Vilela",
         ),
+        Noticia(
+            titulo="Goiás Social leva serviços gratuitos a Valparaíso de Goiás",
+            url="https://agenciacoradenoticias.go.gov.br/goias-social-valparaiso-de-goias-junho-2026",
+            fonte="Agência Cora Coralina de Notícias",
+            publicado_em=datetime(2026, 6, 15, tzinfo=_UTC),
+            resumo="A primeira-dama Iara Netto Vilela esteve em Valparaíso de Goiás para o lançamento de mais uma edição do Goiás Social, levando serviços gratuitos de saúde, assistência social e emissão de documentos à população do município.",
+            pessoa="Iara Netto Vilela",
+        ),
     ],
 }
 
@@ -196,7 +270,7 @@ def main():
     caminho_json = gerar_json(resultados, "resultados")
 
     print("\n" + "=" * 60)
-    print(" MONITORAMENTO DE NOTÍCIAS REAIS — 25/05/2026")
+    print(" MONITORAMENTO DE NOTÍCIAS REAIS — 17/06/2026")
     print("=" * 60)
     for item in resultados:
         n = len(item["noticias"])
