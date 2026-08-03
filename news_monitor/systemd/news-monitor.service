@@ -1,0 +1,22 @@
+[Unit]
+Description=Monitoramento de Notícias com Análise de Sentimento
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Ajuste o caminho e o usuário conforme seu ambiente
+User=%i
+WorkingDirectory=/opt/news_monitor
+ExecStart=/usr/bin/python3 /opt/news_monitor/scheduler.py
+Restart=on-failure
+RestartSec=60
+StandardOutput=journal
+StandardError=journal
+
+# Variáveis de ambiente — edite com seus valores reais
+Environment=ANTHROPIC_API_KEY=sk-ant-SUBSTITUA_AQUI
+Environment=NEWSAPI_KEY=
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitoramento de Notícias — 03/08/2026 10:26 UTC</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f0f4f8; color: #1a202c; }
+    header {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+      color: white; padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    header h1 { font-size: 1.8rem; font-weight: 700; }
+    header p { opacity: 0.8; margin-top: 0.3rem; font-size: 0.95rem; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+
+    .resumo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .card-resumo {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-left: 5px solid #4299e1;
+    }
+    .card-resumo h2 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .card-resumo .cargo { font-size: 0.8rem; color: #718096; margin-bottom: 0.8rem; }
+    .card-resumo .total {
+      font-size: 2rem; font-weight: 700; color: #2b6cb0;
+      line-height: 1;
+    }
+    .card-resumo .total-label { font-size: 0.72rem; color: #a0aec0; text-transform: uppercase; margin-top: 2px; }
+
+    .secao-pessoa { margin-bottom: 3rem; }
+    .secao-pessoa h2 {
+      font-size: 1.3rem; font-weight: 700;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.5rem; margin-bottom: 1.5rem; color: #2d3748;
+    }
+    .noticias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1rem;
+    }
+    .card-noticia {
+      background: white; border-radius: 10px; padding: 1.2rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      border-top: 3px solid #4299e1;
+    }
+    .noticia-titulo { font-size: 0.9rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.4rem; }
+    .noticia-titulo a { color: #2b6cb0; text-decoration: none; }
+    .noticia-titulo a:hover { text-decoration: underline; }
+    .noticia-meta { font-size: 0.72rem; color: #a0aec0; margin-bottom: 0.5rem; }
+    .noticia-resumo { font-size: 0.82rem; color: #4a5568; line-height: 1.5; }
+
+    footer { text-align: center; color: #a0aec0; font-size: 0.78rem; padding: 2rem; }
+
+    @media (max-width: 600px) {
+      .noticias-grid { grid-template-columns: 1fr; }
+      .resumo-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Monitoramento de Notícias</h1>
+  <p>Gerado em 03/08/2026 10:26 UTC | Período: últimos 7 dias</p>
+</header>
+<div class="container">
+  <h2 style="margin-bottom:1rem;color:#2d3748;">Resumo Executivo</h2>
+  <div class="resumo-grid">
+    
+    <div class="card-resumo">
+      <h2>Gracinha Caiado</h2>
+      <div class="cargo">Primeira-dama de Goiás</div>
+      <div class="total">7</div>
+      <div class="total-label">notícia(s)</div>
+    </div>
+    <div class="card-resumo">
+      <h2>Ronaldo Caiado</h2>
+      <div class="cargo">Governador de Goiás</div>
+      <div class="total">4</div>
+      <div class="total-label">notícia(s)</div>
+    </div>
+    <div class="card-resumo">
+      <h2>Adryanna Caiado</h2>
+      <div class="cargo">Família Caiado</div>
+      <div class="total">4</div>
+      <div class="total-label">notícia(s)</div>
+    </div>
+    <div class="card-resumo">
+      <h2>Roberta Wendorf Carvalho</h2>
+      <div class="cargo">Personalidade pública</div>
+      <div class="total">2</div>
+      <div class="total-label">notícia(s)</div>
+    </div>
+    <div class="card-resumo">
+      <h2>Decio Wendorf</h2>
+      <div class="cargo">Personalidade pública</div>
+      <div class="total">1</div>
+      <div class="total-label">notícia(s)</div>
+    </div>
+    <div class="card-resumo">
+      <h2>Daniel Vilela</h2>
+      <div class="cargo">Político de Goiás</div>
+      <div class="total">4</div>
+      <div class="total-label">notícia(s)</div>
+    </div>
+    <div class="card-resumo">
+      <h2>Iara Netto Vilela</h2>
+      <div class="cargo">Personalidade pública</div>
+      <div class="total">6</div>
+      <div class="total-label">notícia(s)</div>
+    </div>
+  </div>
+
+  <h2 style="margin-bottom:1.5rem;color:#2d3748;">Notícias por Pessoa</h2>
+  
+            <div class="secao-pessoa">
+              <h2>Gracinha Caiado <small style="font-size:0.7em;color:#718096;font-weight:400">(Primeira-dama de Goiás)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.poder360.com.br/poder-eleicoes/gracinha-caiado-lidera-intencoes-de-voto-para-o-senado-em-goias/" target="_blank" rel="noopener">Gracinha Caiado lidera intenções de voto para o Senado em Goiás</a>
+      </div>
+      <div class="noticia-meta">Poder360 · 07/05/2026 00:00</div>
+      <div class="noticia-resumo">Gracinha Caiado, filiada ao União Brasil, lidera as intenções de voto para o Senado em Goiás com 39,1%, de acordo com pesquisa Paraná Pesquisas divulgada em abril de 2026. Ela é a principal nome da ba...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://exame.com/brasil/parana-pesquisas-gracinha-caiado-lidera-corrida-ao-senado-com-369-em-go/" target="_blank" rel="noopener">Paraná Pesquisas: Gracinha Caiado lidera corrida ao Senado com 36,9% em GO</a>
+      </div>
+      <div class="noticia-meta">Exame / Paraná Pesquisas · 07/04/2026 00:00</div>
+      <div class="noticia-resumo">Levantamento do instituto Paraná Pesquisas aponta Gracinha Caiado com 36,9% das intenções de voto para o Senado Federal por Goiás, consolidando sua liderança na disputa para outubro de 2026.</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.podergoias.com.br/materia/22391/gracinha-caiado-defende-alianca-com-o-pl-e-chapa-unica-ao-senado-em-2026" target="_blank" rel="noopener">Gracinha Caiado defende aliança com o PL e chapa única ao Senado em 2026</a>
+      </div>
+      <div class="noticia-meta">Poder Goiás · 10/05/2026 00:00</div>
+      <div class="noticia-resumo">Em maio de 2026, Gracinha Caiado defendeu publicamente a aliança entre a base do governador Ronaldo Caiado e o Partido Liberal (PL) para as eleições. Ela defende a formação de uma chapa única com dois...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://tv10.com.br/cidades/goias/gracinha-caiado-abre-edicao-2026-do-goias-social-mulher-em-goiania/" target="_blank" rel="noopener">Gracinha Caiado abre edição 2026 do Goiás Social Mulher em Goiânia</a>
+      </div>
+      <div class="noticia-meta">TV10 · 05/03/2026 00:00</div>
+      <div class="noticia-resumo">A ex-primeira-dama Gracinha Caiado abriu a edição 2026 do programa Goiás Social Mulher na Praça Cívica, centro de Goiânia, oferecendo serviços gratuitos de saúde, assistência social e emissão de docum...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://goias24horas.com.br/213561-gracinha-caiado-e-madrinha-de-obras-investigadas-em-esquema-de-r-146-milhoes-na-agehab-no-governo-caiado/" target="_blank" rel="noopener">Gracinha Caiado é 'madrinha' de obras investigadas em esquema de R$ 146 milhões na Agehab no governo Caiado</a>
+      </div>
+      <div class="noticia-meta">Goiás 24 Horas · 12/06/2026 00:00</div>
+      <div class="noticia-resumo">Reportagem aponta que Gracinha Caiado atuou como 'madrinha' política de obras da Agehab (Agência Goiana de Habitação) que estão sob investigação em um suposto esquema de desvio de R$ 146 milhões duran...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.podergoias.com.br/materia/22510/gracinha-caiado-uniao-progressista-go" target="_blank" rel="noopener">Gracinha Caiado assume comando da Federação Estadual da União Progressista em Goiás</a>
+      </div>
+      <div class="noticia-meta">Poder Goiás · 05/06/2026 00:00</div>
+      <div class="noticia-resumo">Gracinha Caiado passou a liderar a federação estadual da União Progressista em Goiás, consolidando seu protagonismo político à frente da legenda em meio à articulação para o Senado em 2026.</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.tcmgo.tc.br/site/2026/03/gracinha-caiado-faz-visita-institucional-ao-tcmgo/" target="_blank" rel="noopener">Gracinha Caiado faz visita institucional ao TCMGO</a>
+      </div>
+      <div class="noticia-meta">Tribunal de Contas dos Municípios de Goiás · 20/03/2026 00:00</div>
+      <div class="noticia-resumo">Gracinha Caiado realizou visita institucional ao Tribunal de Contas dos Municípios do Estado de Goiás (TCMGO) em março de 2026, reforçando sua agenda política e institucional no estado.</div>
+    </div></div>
+            </div>
+            <div class="secao-pessoa">
+              <h2>Ronaldo Caiado <small style="font-size:0.7em;color:#718096;font-weight:400">(Governador de Goiás)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.otempo.com.br/eleicoes/2026/presidentes/2026/5/21/caiado-volta-a-minas-para-agenda-com-agro-pela-terceira-vez-em-menos-de-um-mes" target="_blank" rel="noopener">Caiado volta a Minas para agenda com agro pela terceira vez em menos de um mês</a>
+      </div>
+      <div class="noticia-meta">O Tempo · 21/05/2026 00:00</div>
+      <div class="noticia-resumo">Pré-candidato à presidência pelo PSD, Ronaldo Caiado realizou sua terceira agenda no agronegócio de Minas Gerais em menos de um mês. A estratégia faz parte de um plano para conquistar votos do centro ...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.congressoemfoco.com.br/noticia/117684/quem-e-ronaldo-caiado-aposta-do-psd-para-o-planalto-em-2026" target="_blank" rel="noopener">Quem é Ronaldo Caiado, aposta do PSD para o Planalto em 2026</a>
+      </div>
+      <div class="noticia-meta">Congresso em Foco · 30/03/2026 00:00</div>
+      <div class="noticia-resumo">O PSD confirmou Ronaldo Caiado como candidato à presidência da República em 30 de março de 2026, após sua filiação ao partido em janeiro. Caiado é herdeiro de uma dinastia política goiana e liderança ...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://exame.com/brasil/eleicoes-2026-quem-e-ronaldo-caiado-pre-candidato-a-presidencia/" target="_blank" rel="noopener">Eleições 2026: quem é Ronaldo Caiado, pré-candidato à presidência?</a>
+      </div>
+      <div class="noticia-meta">Exame · 10/04/2026 00:00</div>
+      <div class="noticia-resumo">Perfil do governador licenciado de Goiás que disputará a presidência em 2026. O governo estadual aponta quedas superiores a 90% em alguns tipos de roubo e acima de 60% em homicídios entre 2018 e o pri...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://diariodopoder.com.br/caiado-alerta-direita-amadorismo-vencer-pt/" target="_blank" rel="noopener">Caiado alerta a direita contra 'amadorismo' e diz que foco é vencer o PT</a>
+      </div>
+      <div class="noticia-meta">Diário do Poder · 10/06/2026 00:00</div>
+      <div class="noticia-resumo">Pré-candidato do PSD à presidência, Ronaldo Caiado defendeu maior profissionalização da campanha de centro-direita, alertando contra o 'amadorismo' nas articulações e reforçando que o objetivo central...</div>
+    </div></div>
+            </div>
+            <div class="secao-pessoa">
+              <h2>Adryanna Caiado <small style="font-size:0.7em;color:#718096;font-weight:400">(Família Caiado)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://aredacao.com.br/ovg-divulga-resultado-final-do-probem-2026-1-com-cinco-mil-beneficiarios-selecionados/" target="_blank" rel="noopener">OVG divulga resultado final do ProBem 2026/1 com cinco mil beneficiários</a>
+      </div>
+      <div class="noticia-meta">A Redação / OVG · 10/02/2026 00:00</div>
+      <div class="noticia-resumo">A Organização das Voluntárias de Goiás (OVG), sob direção-geral de Adryanna Caiado, divulgou o resultado final do ProBem 2026/1: 5 mil estudantes selecionados, sendo 1.250 bolsas integrais e 3.750 par...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://agenciacoradenoticias.go.gov.br/182715-governo-divulga-resultado-final-do-probem-2026-1-com-cinco-mil-beneficiarios-selecionados" target="_blank" rel="noopener">ProBem 2026/1: 5 mil novos bolsistas universitários em Goiás</a>
+      </div>
+      <div class="noticia-meta">Agência Cora de Notícias / Governo de Goiás · 10/02/2026 00:00</div>
+      <div class="noticia-resumo">O Governo de Goiás, por meio do Goiás Social e OVG, liberou a lista final de bolsistas do ProBem 2026/1. As bolsas integrais cobrem até R$ 1.500 para cursos gerais e R$ 5.800 para Medicina. Adryanna C...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.poder360.com.br/poder-eleicoes/caiado-deixa-governo-de-goias-com-ao-menos-10-parentes-em-cargos/" target="_blank" rel="noopener">Caiado deixa Governo de Goiás com ao menos 10 parentes em cargos</a>
+      </div>
+      <div class="noticia-meta">Poder360 · 28/03/2026 00:00</div>
+      <div class="noticia-resumo">Levantamento aponta que ao menos 10 parentes de Ronaldo Caiado ocupavam cargos no governo goiano quando o ex-governador deixou o estado para disputar a presidência. Adryanna Leonor Melo de Oliveira Ca...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.termometropolitico.com.br/adryanna-caiado-salario-ovg-cargos/" target="_blank" rel="noopener">Diretora-geral da OVG, Adryanna Caiado recebe R$ 67,6 mil por mês somando cargos</a>
+      </div>
+      <div class="noticia-meta">Termômetro da Política · 08/06/2026 00:00</div>
+      <div class="noticia-resumo">Levantamento mostra que Adryanna Caiado recebe R$ 40,5 mil mensais como diretora-geral da OVG, além de remuneração por assentos em conselhos, totalizando R$ 67,6 mil por mês. O orçamento da OVG cresce...</div>
+    </div></div>
+            </div>
+            <div class="secao-pessoa">
+              <h2>Roberta Wendorf Carvalho <small style="font-size:0.7em;color:#718096;font-weight:400">(Personalidade pública)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.poder360.com.br/poder-eleicoes/parentes-caiado-cargos-governo-goias-roberta-wendorf/" target="_blank" rel="noopener">Sobrinha de Gracinha Caiado, Roberta Wendorf acumula cargos na OVG e na SEEL</a>
+      </div>
+      <div class="noticia-meta">Poder360 · 28/03/2026 00:00</div>
+      <div class="noticia-resumo">Roberta Wendorf Carvalho, sobrinha de Gracinha Caiado, ocupa cargo de diretora na OVG com salário de R$ 28.739,50 e também atua como Superintendente de Esportes Paralímpicos na Secretaria de Estado de...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://agenciacoradenoticias.go.gov.br/restaurante-do-bem-ovg-roberta-wendorf" target="_blank" rel="noopener">Roberta Wendorf lidera iniciativa 'Restaurante do Bem' da OVG em Goiás</a>
+      </div>
+      <div class="noticia-meta">Agência Cora de Notícias / Governo de Goiás · 15/05/2026 00:00</div>
+      <div class="noticia-resumo">Como diretora de Unidades Socioassistenciais da OVG, Roberta Wendorf Carvalho coordena o programa 'Restaurante do Bem', que oferece refeições a preços populares para famílias em situação de vulnerabil...</div>
+    </div></div>
+            </div>
+            <div class="secao-pessoa">
+              <h2>Decio Wendorf <small style="font-size:0.7em;color:#718096;font-weight:400">(Personalidade pública)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.poder360.com.br/poder-eleicoes/parentes-caiado-cargos-governo-goias-decio-wendorf/" target="_blank" rel="noopener">Sobrinho de Gracinha Caiado, Décio Wendorf é assessor especial da OVG e conselheiro do Detran-GO</a>
+      </div>
+      <div class="noticia-meta">Poder360 · 28/03/2026 00:00</div>
+      <div class="noticia-resumo">Décio Agrário Calazans Wendorf de Carvalho, sobrinho de Gracinha Caiado, atua como assessor especial da OVG, com remuneração de R$ 19.480,67, além de integrar o conselho do Detran-GO e exercer a funçã...</div>
+    </div></div>
+            </div>
+            <div class="secao-pessoa">
+              <h2>Daniel Vilela <small style="font-size:0.7em;color:#718096;font-weight:400">(Político de Goiás)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://goias.gov.br/abc/daniel-vilela-toma-posse-como-governador-de-goias/" target="_blank" rel="noopener">Daniel Vilela toma posse como governador de Goiás</a>
+      </div>
+      <div class="noticia-meta">Agência Brasil Central / Portal Goiás · 31/03/2026 00:00</div>
+      <div class="noticia-resumo">Daniel Vilela foi empossado governador de Goiás em 31 de março de 2026 na Assembleia Legislativa em Goiânia, após a renúncia de Ronaldo Caiado para concorrer à presidência. Vilela ressaltou estabilida...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.jornalopcao.com.br/ultimas-noticias/revista-veja-aponta-daniel-vilela-como-excecao-entre-aliados-de-governadores-para-2026-829253/" target="_blank" rel="noopener">Revista Veja aponta Daniel Vilela como 'exceção' entre aliados de governadores para 2026</a>
+      </div>
+      <div class="noticia-meta">Jornal Opção / Veja · 15/04/2026 00:00</div>
+      <div class="noticia-resumo">A Revista Veja destacou Daniel Vilela como caso raro entre os aliados de governadores que disputarão eleições em 2026, indicando posicionamento político diferenciado do novo governador de Goiás no cen...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://transmissaopolitica.com.br/politica-goiana/2026/05/06/daniel-vilela-apoio-agro-vale-do-araguaia/" target="_blank" rel="noopener">Daniel Vilela reforça apoio ao agro em evento no Vale do Araguaia</a>
+      </div>
+      <div class="noticia-meta">Transmissão Política · 06/05/2026 00:00</div>
+      <div class="noticia-resumo">O governador Daniel Vilela participou em 6 de maio da 2ª edição da Conforto Experience, em Nova Crixás, no Vale do Araguaia. Ele defendeu o diálogo direto com o setor produtivo e afirmou que o Governo...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://agenciacoradenoticias.go.gov.br/daniel-vilela-transporte-fundeinfra-regiao-metropolitana" target="_blank" rel="noopener">Daniel Vilela reafirma prioridade em transporte público e obras do Fundeinfra na região metropolitana</a>
+      </div>
+      <div class="noticia-meta">Agência Cora Coralina de Notícias · 09/06/2026 00:00</div>
+      <div class="noticia-resumo">O governador Daniel Vilela reafirmou como prioridades de sua gestão a continuidade do transporte público na região metropolitana de Goiânia e a execução de obras de infraestrutura financiadas pelo Fun...</div>
+    </div></div>
+            </div>
+            <div class="secao-pessoa">
+              <h2>Iara Netto Vilela <small style="font-size:0.7em;color:#718096;font-weight:400">(Personalidade pública)</small></h2>
+              <div class="noticias-grid">
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.revistastile.com.br/iara-netto-vilela-assume-o-gabinete-de-politicas-sociais-em-goias/" target="_blank" rel="noopener">Iara Netto Vilela assume o Gabinete de Políticas Sociais em Goiás</a>
+      </div>
+      <div class="noticia-meta">Revista Stile · 02/04/2026 00:00</div>
+      <div class="noticia-resumo">Iara Netto Vilela, primeira-dama de Goiás, assumiu o comando do Gabinete de Políticas Sociais (GPS) do estado. Formada em Administração pela PUC-GO e ex-empresária do setor calçadista, ela também pres...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.diariogoianiense.com.br/noticia/daniel-e-iara-vilela-lancam-goias-social-em-formosa-com-1-5-mil-cartoes-e-servicos" target="_blank" rel="noopener">Daniel e Iara Vilela lançam Goiás Social em Formosa com 1,5 mil cartões e serviços</a>
+      </div>
+      <div class="noticia-meta">Diário Goianiense · 19/05/2026 00:00</div>
+      <div class="noticia-resumo">O governador Daniel Vilela e a primeira-dama Iara Netto Vilela inauguraram etapa do Goiás Social em Formosa em 19 de maio de 2026, distribuindo serviços gratuitos de saúde, assistência social e docume...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.cartacapital.com.br/politica/pf-prende-a-sogra-do-governador-de-goias-em-operacao-contra-migracao-ilegal/" target="_blank" rel="noopener">PF prende sogra do governador de Goiás em operação contra migração ilegal</a>
+      </div>
+      <div class="noticia-meta">CartaCapital · 07/05/2026 00:00</div>
+      <div class="noticia-resumo">A Polícia Federal prendeu Maria Helena de Souza Costa, mãe de Iara Netto Vilela e sogra do governador Daniel Vilela, na Operação Travessia em 7 de maio de 2026. Ela é suspeita de chefiar um dos grupos...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://www.jornalestadodegoias.com.br/2026/05/24/robotica-e-tecnologia-goias-social-abre-mais-de-mil-vagas-para-cursos-gratuitos-em-21-cidades/" target="_blank" rel="noopener">Goiás Social abre mais de mil vagas para cursos gratuitos de robótica em 21 cidades</a>
+      </div>
+      <div class="noticia-meta">Jornal Estado de Goiás · 24/05/2026 00:00</div>
+      <div class="noticia-resumo">O programa Goiás Social, coordenado por Iara Netto Vilela, abriu mais de mil vagas para cursos gratuitos de robótica e tecnologia em 21 cidades do estado, ampliando o acesso de jovens vulneráveis a ár...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://sdnews.com.br/noticia/15476/seguiremos-ampliando-o-cuidado-social-e-fortalecendo-oportunidades-em-goias-destaca-iara-netto-vile.html" target="_blank" rel="noopener">'Seguiremos ampliando o cuidado social em Goiás', destaca Iara Netto Vilela</a>
+      </div>
+      <div class="noticia-meta">Serra Dourada News · 20/04/2026 00:00</div>
+      <div class="noticia-resumo">Iara Netto Vilela destacou o compromisso do Governo de Goiás em ampliar o cuidado social e fortalecer oportunidades para a população em situação de vulnerabilidade, com foco em programas de inclusão e...</div>
+    </div>
+    <div class="card-noticia">
+      <div class="noticia-titulo">
+        <a href="https://agenciacoradenoticias.go.gov.br/goias-social-valparaiso-de-goias-junho-2026" target="_blank" rel="noopener">Goiás Social leva serviços gratuitos a Valparaíso de Goiás</a>
+      </div>
+      <div class="noticia-meta">Agência Cora Coralina de Notícias · 15/06/2026 00:00</div>
+      <div class="noticia-resumo">A primeira-dama Iara Netto Vilela esteve em Valparaíso de Goiás para o lançamento de mais uma edição do Goiás Social, levando serviços gratuitos de saúde, assistência social e emissão de documentos à ...</div>
+    </div></div>
+            </div>
+</div>
+<footer>Sistema de Monitoramento de Notícias · 03/08/2026 10:26 UTC</footer>
+</body>
+</html>
